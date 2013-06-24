@@ -11,6 +11,6 @@ This matcher will be use the Harmonic Progression algorithm as document on the p
 Documentation
 =============
 
-This repository include example from Harmonic Progression Analyzer from https://patterns.enm.bris.ac.uk/hpa-software-package by Yizhao Ni, Matt Mcvicar, Raul Santos-Rodriguez and Tijl De Bie.
+This repository include example from Harmonic Progression Analyzer https://patterns.enm.bris.ac.uk/hpa-software-package by Yizhao Ni, Matt Mcvicar, Raul Santos-Rodriguez and Tijl De Bie.
 
 More will be add later.
