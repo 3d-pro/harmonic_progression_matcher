@@ -13,4 +13,6 @@ Documentation
 
 This repository include example from Harmonic Progression Analyzer https://patterns.enm.bris.ac.uk/hpa-software-package by Yizhao Ni, Matt Mcvicar, Raul Santos-Rodriguez and Tijl De Bie.
 
+A scripts folder include some of a batch script that will be the core for generating data to MongoDB.
+
 More will be add later.
