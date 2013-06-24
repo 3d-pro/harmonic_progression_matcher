@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
+# csv result file parser from sonic-annotator
+
 import os
 import sys
 import csv
-import json
-import pymongo
 
 fileList = []
 rootdir = sys.argv[1]
