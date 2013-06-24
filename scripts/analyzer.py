@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- 
 
+# Analyzer script for sonic annotator
+
 import os
 import sys
 import subprocess
@@ -8,7 +10,7 @@ import subprocess
 fileList = []
 rootdir = sys.argv[1]
 
-#walking first time
+#walking through folder
 for root, subFolders, files in os.walk(rootdir):
     for file in files:
         if file.endswith('.mp3'):
