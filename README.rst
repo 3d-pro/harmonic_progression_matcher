@@ -15,4 +15,6 @@ This repository include example from Harmonic Progression Analyzer https://patte
 
 A scripts folder include some of a batch script that will be the core for generating data to MongoDB.
 
+A libraries folder include *librosa* forked from https://github.com/bmcfee/librosa 
+
 More will be add later.
