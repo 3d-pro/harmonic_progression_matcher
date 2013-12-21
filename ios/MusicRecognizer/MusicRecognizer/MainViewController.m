@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-extern std::string *GetPCMFromFile(char * filename);
+extern const char * GetPCMFromFile(char * filename);
 
 @interface MainViewController ()
 
@@ -47,7 +47,7 @@ extern std::string *GetPCMFromFile(char * filename);
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.caf"];
-        std::string *fpCode = GetPCMFromFile((char*) [filePath cStringUsingEncoding:NSUTF8StringEncoding]);
+        const char * fpCode = GetPCMFromFile((char*) [filePath cStringUsingEncoding:NSASCIIStringEncoding]);
         [self getSong:fpCode];
     } else {
         self.recording = YES;
@@ -57,16 +57,16 @@ extern std::string *GetPCMFromFile(char * filename);
     
 }
 
-- (void)getSong:(std::string *)fpCode {
-	NSLog(@"Done: %c", fpCode);
-	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                   [NSString stringWithFormat:@"%@", fpCode], @"fp_code", nil];
-    [manager POST:@"http://161.246.38.80:8080/query" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
+- (void)getSong:(const char *)fpCode {
+//    //NSLog(@"Done: %c", fpCode);
+//	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    //NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+//                                   [NSString stringWithFormat:@"@", fpCode], @"fp_code", nil];
+//    //[manager POST:@"http://161.246.38.80:8080/query" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSLog(@"JSON: %@", responseObject);
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
 }
 
 @end
