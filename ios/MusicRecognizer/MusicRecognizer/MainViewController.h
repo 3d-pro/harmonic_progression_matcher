@@ -14,12 +14,13 @@
 
 @interface MainViewController : UIViewController <MPMediaPickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *metaLabel;
-@property (weak, nonatomic) IBOutlet UILabel *albumLabel;
-@property (strong, nonatomic) IBOutlet UIButton *recognizerButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) MicrophoneInput *recorder;
 @property (strong, nonatomic) NSDictionary *JSON;
 @property const char *fpCode;
 @property BOOL recording;
+
+- (IBAction)recordPressed:(id)sender;
 
 @end

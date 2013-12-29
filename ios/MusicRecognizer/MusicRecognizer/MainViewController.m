@@ -37,12 +37,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)startRecognizer:(id)sender {
+
+- (IBAction)recordPressed:(id)sender {
     if (self.recording) {
         self.recording = NO;
         [self.recorder stopRecording];
-        
-        [self.recognizerButton setTitle:@"Start Recognizer" forState:UIControlStateNormal];
+        [self.statusLabel setText:@"Finding..."];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.m4a"];
@@ -51,10 +51,10 @@
         [self getCode:filePath];
     } else {
         self.recording = YES;
-        [self.recognizerButton setTitle:@"Stop" forState:UIControlStateNormal];
+        //[self.recognizerButton setTitle:@"Stop" forState:UIControlStateNormal];
         [self.recorder startRecording];
+        [self.statusLabel setText:@"Recording..."];
     }
-    
 }
 
 - (void)getCode:(NSString *)filePath {
@@ -65,11 +65,11 @@
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Success! %@", operation.responseString);
         self.JSON = [NSJSONSerialization JSONObjectWithData: operation.responseData
-                                               options: NSJSONReadingMutableContainers
-                                                 error: nil];
+                                                    options: NSJSONReadingMutableContainers
+                                                      error: nil];
         NSDictionary *metadata = [self.JSON objectForKey:@"metadata"];
-        [self.metaLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
-        [self.albumLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
+        [self.statusLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
+        //[self.albumLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
