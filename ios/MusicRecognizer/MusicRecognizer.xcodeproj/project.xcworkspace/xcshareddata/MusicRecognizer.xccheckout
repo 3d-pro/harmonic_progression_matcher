@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>DFC3CACC-723E-4705-B5AD-6B5EF9B080F3</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MusicRecognizer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C6D19020-EF05-409D-B3A3-BD7484DE892C</key>
+		<string>https://github.com/3d-pro/harmonic_progression_matcher.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/MusicRecognizer/MusicRecognizer.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C6D19020-EF05-409D-B3A3-BD7484DE892C</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/3d-pro/harmonic_progression_matcher.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C6D19020-EF05-409D-B3A3-BD7484DE892C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C6D19020-EF05-409D-B3A3-BD7484DE892C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>harmonic_progression_matcher</string>
+		</dict>
+	</array>
+</dict>
+</plist>

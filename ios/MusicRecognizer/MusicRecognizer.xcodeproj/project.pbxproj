@@ -56,6 +56,8 @@
 		3DD6929E18706EA500CD1A03 /* micflat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6928918706EA500CD1A03 /* micflat.png */; };
 		3DD6929F18706EA500CD1A03 /* buttonbox_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6928A18706EA500CD1A03 /* buttonbox_selected.png */; };
 		3DD692A018706EA500CD1A03 /* buttonbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6928B18706EA500CD1A03 /* buttonbox.png */; };
+		59744540187083A400EF99DC /* testuser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5974453F187083A400EF99DC /* testuser.jpg */; };
+		5974454218708F8300EF99DC /* speechbubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 5974454118708F8200EF99DC /* speechbubble.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +128,8 @@
 		3DD6928918706EA500CD1A03 /* micflat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micflat.png; sourceTree = "<group>"; };
 		3DD6928A18706EA500CD1A03 /* buttonbox_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonbox_selected.png; sourceTree = "<group>"; };
 		3DD6928B18706EA500CD1A03 /* buttonbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonbox.png; sourceTree = "<group>"; };
+		5974453F187083A400EF99DC /* testuser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testuser.jpg; sourceTree = "<group>"; };
+		5974454118708F8200EF99DC /* speechbubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speechbubble.png; sourceTree = "<group>"; };
 		C3B7CC82A8224E03A08F77E4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		F09255371FA842ACA27CE0A6 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -304,6 +308,8 @@
 				3DD6928918706EA500CD1A03 /* micflat.png */,
 				3DD6928A18706EA500CD1A03 /* buttonbox_selected.png */,
 				3DD6928B18706EA500CD1A03 /* buttonbox.png */,
+				5974453F187083A400EF99DC /* testuser.jpg */,
+				5974454118708F8200EF99DC /* speechbubble.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -413,6 +419,8 @@
 				3DD6929018706EA500CD1A03 /* whatshot_selected.png in Resources */,
 				3DD6928E18706EA500CD1A03 /* history.png in Resources */,
 				3DD6929618706EA500CD1A03 /* profile.png in Resources */,
+				59744540187083A400EF99DC /* testuser.jpg in Resources */,
+				5974454218708F8300EF99DC /* speechbubble.png in Resources */,
 				3DD6929218706EA500CD1A03 /* whatshot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
