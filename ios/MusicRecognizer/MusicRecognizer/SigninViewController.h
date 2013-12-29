@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AFNetworking.h"
 
 @interface SigninViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+
 - (IBAction)backPressed:(id)sender;
+- (IBAction)signinPressed:(id)sender;
 
 @end

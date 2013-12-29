@@ -30,7 +30,6 @@
 		3DAE8F29184F1A580030EA79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F28184F1A580030EA79 /* SystemConfiguration.framework */; };
 		3DAE8F50184F1CE60030EA79 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F4F184F1CE60030EA79 /* CoreAudio.framework */; };
 		3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */; };
-		3DAE8F7A1850E3380030EA79 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAE8F791850E3380030EA79 /* Main-iPad.storyboard */; };
 		3DD6927018706E4900CD1A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6926918706E4900CD1A03 /* Main.storyboard */; };
 		3DD6927118706E4900CD1A03 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */; };
 		3DD6927218706E4900CD1A03 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926D18706E4900CD1A03 /* LoginViewController.m */; };
@@ -72,7 +71,7 @@
 
 /* Begin PBXFileReference section */
 		3D209E231865831E00B6538C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		3D89C17F1830E7A800926994 /* MusicRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D89C17F1830E7A800926994 /* Chordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89C1821830E7A900926994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D89C1841830E7A900926994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3D89C1861830E7A900926994 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -99,7 +98,6 @@
 		3DAE8F55184F3FB60030EA79 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneInput.h; sourceTree = "<group>"; };
 		3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneInput.m; sourceTree = "<group>"; };
-		3DAE8F791850E3380030EA79 /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
 		3DD6926918706E4900CD1A03 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3DD6926A18706E4900CD1A03 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
@@ -181,7 +179,7 @@
 		3D89C1801830E7A800926994 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3D89C17F1830E7A800926994 /* MusicRecognizer.app */,
+				3D89C17F1830E7A800926994 /* Chordle.app */,
 				3D89C1A31830E7AA00926994 /* MusicRecognizerTests.xctest */,
 			);
 			name = Products;
@@ -212,7 +210,6 @@
 			children = (
 				3DD6927418706E5400CD1A03 /* ViewControllers Classes */,
 				3DD6927518706E7100CD1A03 /* Others Classes */,
-				3DAE8F781850E1470030EA79 /* iPad */,
 				3D89C1911830E7AA00926994 /* AppDelegate.h */,
 				3D89C1921830E7AA00926994 /* AppDelegate.m */,
 				3DD6926918706E4900CD1A03 /* Main.storyboard */,
@@ -250,14 +247,6 @@
 				3D89C1AD1830E7AA00926994 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3DAE8F781850E1470030EA79 /* iPad */ = {
-			isa = PBXGroup;
-			children = (
-				3DAE8F791850E3380030EA79 /* Main-iPad.storyboard */,
-			);
-			name = iPad;
 			sourceTree = "<group>";
 		};
 		3DD6927418706E5400CD1A03 /* ViewControllers Classes */ = {
@@ -333,7 +322,7 @@
 			);
 			name = MusicRecognizer;
 			productName = MusicRecognizer;
-			productReference = 3D89C17F1830E7A800926994 /* MusicRecognizer.app */;
+			productReference = 3D89C17F1830E7A800926994 /* Chordle.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3D89C1A21830E7AA00926994 /* MusicRecognizerTests */ = {
@@ -407,7 +396,6 @@
 				3DD6929E18706EA500CD1A03 /* micflat.png in Resources */,
 				3D89C18D1830E7A900926994 /* InfoPlist.strings in Resources */,
 				3DD6929818706EA500CD1A03 /* search_selected@2x.png in Resources */,
-				3DAE8F7A1850E3380030EA79 /* Main-iPad.storyboard in Resources */,
 				3DD6929118706EA500CD1A03 /* whatshot_selected@2x.png in Resources */,
 				3DD6929A18706EA500CD1A03 /* search@2x.png in Resources */,
 				3DD6929F18706EA500CD1A03 /* buttonbox_selected.png in Resources */,
@@ -611,8 +599,8 @@
 					"$(inherited)",
 					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = Chordle;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -632,8 +620,8 @@
 					"$(inherited)",
 					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				PRODUCT_NAME = Chordle;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

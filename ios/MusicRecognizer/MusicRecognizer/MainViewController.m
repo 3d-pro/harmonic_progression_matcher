@@ -43,6 +43,7 @@
         self.recording = NO;
         [self.recorder stopRecording];
         [self.statusLabel setText:@"Finding..."];
+        [self.extendlabel setText:@""];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.m4a"];
@@ -54,6 +55,12 @@
         //[self.recognizerButton setTitle:@"Stop" forState:UIControlStateNormal];
         [self.recorder startRecording];
         [self.statusLabel setText:@"Recording..."];
+        [self.extendlabel setText:@""];
+        [NSTimer scheduledTimerWithTimeInterval:20.0
+                                         target:self
+                                       selector:@selector(recordPressed:)
+                                       userInfo:nil
+                                        repeats:NO];
     }
 }
 
@@ -68,8 +75,14 @@
                                                     options: NSJSONReadingMutableContainers
                                                       error: nil];
         NSDictionary *metadata = [self.JSON objectForKey:@"metadata"];
-        [self.statusLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
-        //[self.albumLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
+//        NSLog(@"%@",[metadata objectForKey:@"track"]);
+        if (![metadata objectForKey:@"track"] || ![metadata objectForKey:@"artist"]) {
+            [self.statusLabel setText:@"Not found! Please try again."];
+            [self.extendlabel setText:@""];
+        } else {
+            [self.statusLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
+            [self.extendlabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
+        }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
