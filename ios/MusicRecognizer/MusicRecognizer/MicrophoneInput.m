@@ -27,17 +27,15 @@
 	[audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
 	
 	NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:10];
-	[recordSettings setObject:[NSNumber numberWithInt: kAudioFormatLinearPCM] forKey: AVFormatIDKey];
-	[recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
+	[recordSettings setObject:[NSNumber numberWithInt: kAudioFormatMPEG4AAC] forKey: AVFormatIDKey];
+	[recordSettings setObject:[NSNumber numberWithFloat:22050.0] forKey: AVSampleRateKey];
 	[recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
 	[recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-	[recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-	[recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];   
 	
 	//set the export session's outputURL to <Documents>/output.caf
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
-	NSURL *outURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"output.caf"]];
+	NSURL *outURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"output.m4a"]];
 	[[NSFileManager defaultManager] removeItemAtURL:outURL error:nil];
 	NSLog(@"url loc is %@", outURL);
 	
@@ -68,7 +66,7 @@
 	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 	[audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
 	
-	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/recordTest.caf", [[NSBundle mainBundle] resourcePath]]];
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/recordTest.m4a", [[NSBundle mainBundle] resourcePath]]];
 	NSError *error;
 	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	audioPlayer.numberOfLoops = 0;

@@ -8,7 +8,6 @@
 
 #import "MainViewController.h"
 
-extern const char * GetPCMFromFile(char * filename);
 
 @interface MainViewController ()
 
@@ -46,9 +45,10 @@ extern const char * GetPCMFromFile(char * filename);
         [self.recognizerButton setTitle:@"Start Recognizer" forState:UIControlStateNormal];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
-		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.caf"];
-        const char * fpCode = GetPCMFromFile((char*) [filePath cStringUsingEncoding:NSASCIIStringEncoding]);
-        [self getSong:fpCode];
+		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.m4a"];
+        unsigned long long fileSize = [[[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil] fileSize];
+        NSLog(@"filesize: %@", [NSByteCountFormatter stringFromByteCount:fileSize countStyle:NSByteCountFormatterCountStyleFile]);
+        [self getCode:filePath];
     } else {
         self.recording = YES;
         [self.recognizerButton setTitle:@"Stop" forState:UIControlStateNormal];
@@ -57,16 +57,23 @@ extern const char * GetPCMFromFile(char * filename);
     
 }
 
-- (void)getSong:(const char *)fpCode {
-//    //NSLog(@"Done: %c", fpCode);
-//	AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-//    //NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-//                                   [NSString stringWithFormat:@"@", fpCode], @"fp_code", nil];
-//    //[manager POST:@"http://161.246.38.80:8080/query" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSLog(@"JSON: %@", responseObject);
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"Error: %@", error);
-//    }];
+- (void)getCode:(NSString *)filePath {
+    NSData *audioData = [NSData dataWithContentsOfFile:filePath];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://161.246.38.80:8080"]];
+    AFHTTPRequestOperation *op = [manager POST:@"/code" parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:audioData name:@"myfile" fileName:@"output.m4a" mimeType:@"audio/m4a"];
+    } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Success! %@", operation.responseString);
+        self.JSON = [NSJSONSerialization JSONObjectWithData: operation.responseData
+                                               options: NSJSONReadingMutableContainers
+                                                 error: nil];
+        NSDictionary *metadata = [self.JSON objectForKey:@"metadata"];
+        [self.metaLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
+        [self.albumLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    [op start];
 }
 
 @end

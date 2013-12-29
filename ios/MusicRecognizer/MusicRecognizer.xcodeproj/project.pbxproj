@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3D7A53391864D4A9006506B7 /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D7A53331864D4A9006506B7 /* Codegen_wrapper.cpp */; };
-		3D7A533A1864D4A9006506B7 /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D7A53371864D4A9006506B7 /* GetPCMFromFile.cpp */; };
+		3D209E241865831E00B6538C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D209E231865831E00B6538C /* MainViewController.m */; };
 		3D89C1831830E7A900926994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1821830E7A900926994 /* Foundation.framework */; };
 		3D89C1851830E7A900926994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1841830E7A900926994 /* CoreGraphics.framework */; };
 		3D89C1871830E7A900926994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1861830E7A900926994 /* UIKit.framework */; };
@@ -30,7 +29,6 @@
 		3DAE8F27184F1A4D0030EA79 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F26184F1A4D0030EA79 /* MobileCoreServices.framework */; };
 		3DAE8F29184F1A580030EA79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F28184F1A580030EA79 /* SystemConfiguration.framework */; };
 		3DAE8F50184F1CE60030EA79 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F4F184F1CE60030EA79 /* CoreAudio.framework */; };
-		3DAE8F57184F3FB60030EA79 /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F56184F3FB60030EA79 /* MainViewController.mm */; };
 		3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */; };
 		3DAE8F6F184F44620030EA79 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F5D184F44620030EA79 /* AFHTTPRequestOperation.m */; };
 		3DAE8F70184F44620030EA79 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F5F184F44620030EA79 /* AFHTTPRequestOperationManager.m */; };
@@ -42,7 +40,6 @@
 		3DAE8F76184F44620030EA79 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F6C184F44620030EA79 /* AFURLResponseSerialization.m */; };
 		3DAE8F77184F44620030EA79 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F6E184F44620030EA79 /* AFURLSessionManager.m */; };
 		3DAE8F7A1850E3380030EA79 /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DAE8F791850E3380030EA79 /* Main-iPad.storyboard */; };
-		3DAE8F841850EC820030EA79 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F831850EC820030EA79 /* libechoprint-codegen-ios.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,15 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3D7A53331864D4A9006506B7 /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Codegen_wrapper.cpp; sourceTree = "<group>"; };
-		3D7A53341864D4A9006506B7 /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Codegen_wrapper.h; sourceTree = "<group>"; };
-		3D7A53351864D4A9006506B7 /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Codegen.h; sourceTree = "<group>"; };
-		3D7A53361864D4A9006506B7 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
-		3D7A53371864D4A9006506B7 /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GetPCMFromFile.cpp; sourceTree = "<group>"; };
-		3D7A53381864D4A9006506B7 /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetPCMFromFile.h; sourceTree = "<group>"; };
-		3D7A533B1864D4B5006506B7 /* CADebugMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
-		3D7A533C1864D4B5006506B7 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
-		3D7A533E1864D802006506B7 /* CADebugPrintf.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		3D209E231865831E00B6538C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3D89C17F1830E7A800926994 /* MusicRecognizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicRecognizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89C1821830E7A900926994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D89C1841830E7A900926994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,7 +80,6 @@
 		3DAE8F28184F1A580030EA79 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		3DAE8F4F184F1CE60030EA79 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		3DAE8F55184F3FB60030EA79 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3DAE8F56184F3FB60030EA79 /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MainViewController.mm; sourceTree = "<group>"; };
 		3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneInput.h; sourceTree = "<group>"; };
 		3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneInput.m; sourceTree = "<group>"; };
 		3DAE8F5C184F44620030EA79 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -114,7 +102,6 @@
 		3DAE8F6D184F44620030EA79 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		3DAE8F6E184F44620030EA79 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		3DAE8F791850E3380030EA79 /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
-		3DAE8F831850EC820030EA79 /* libechoprint-codegen-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libechoprint-codegen-ios.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +115,6 @@
 				3DAE8F25184F1A410030EA79 /* CFNetwork.framework in Frameworks */,
 				3DAE8F23184F1A3B0030EA79 /* libz.1.2.5.dylib in Frameworks */,
 				3DAE8F21184F1A310030EA79 /* MediaPlayer.framework in Frameworks */,
-				3DAE8F841850EC820030EA79 /* libechoprint-codegen-ios.a in Frameworks */,
 				3DAE8F1F184F1A2A0030EA79 /* AudioToolbox.framework in Frameworks */,
 				3DAE8F1D184F1A1A0030EA79 /* AVFoundation.framework in Frameworks */,
 				3D89C1851830E7A900926994 /* CoreGraphics.framework in Frameworks */,
@@ -172,7 +158,6 @@
 		3D89C1811830E7A800926994 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DAE8F831850EC820030EA79 /* libechoprint-codegen-ios.a */,
 				3DAE8F22184F1A3B0030EA79 /* libz.1.2.5.dylib */,
 				3DAE8F4F184F1CE60030EA79 /* CoreAudio.framework */,
 				3DAE8F28184F1A580030EA79 /* SystemConfiguration.framework */,
@@ -194,14 +179,13 @@
 			children = (
 				3DAE8F781850E1470030EA79 /* iPad */,
 				3DAE8F5B184F44620030EA79 /* AFNetworking */,
-				3DAE8F54184F1FCB0030EA79 /* Others Classes */,
 				3D89C1911830E7AA00926994 /* AppDelegate.h */,
 				3D89C1921830E7AA00926994 /* AppDelegate.m */,
 				3D89C1941830E7AA00926994 /* Main.storyboard */,
 				3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */,
 				3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */,
 				3DAE8F55184F3FB60030EA79 /* MainViewController.h */,
-				3DAE8F56184F3FB60030EA79 /* MainViewController.mm */,
+				3D209E231865831E00B6538C /* MainViewController.m */,
 				3D89C19D1830E7AA00926994 /* Images.xcassets */,
 				3D89C1891830E7A900926994 /* Supporting Files */,
 			);
@@ -235,22 +219,6 @@
 				3D89C1AD1830E7AA00926994 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3DAE8F54184F1FCB0030EA79 /* Others Classes */ = {
-			isa = PBXGroup;
-			children = (
-				3D7A533B1864D4B5006506B7 /* CADebugMacros.h */,
-				3D7A533E1864D802006506B7 /* CADebugPrintf.h */,
-				3D7A533C1864D4B5006506B7 /* CAStreamBasicDescription.h */,
-				3D7A53331864D4A9006506B7 /* Codegen_wrapper.cpp */,
-				3D7A53341864D4A9006506B7 /* Codegen_wrapper.h */,
-				3D7A53351864D4A9006506B7 /* Codegen.h */,
-				3D7A53361864D4A9006506B7 /* echoprint_Prefix.pch */,
-				3D7A53371864D4A9006506B7 /* GetPCMFromFile.cpp */,
-				3D7A53381864D4A9006506B7 /* GetPCMFromFile.h */,
-			);
-			name = "Others Classes";
 			sourceTree = "<group>";
 		};
 		3DAE8F5B184F44620030EA79 /* AFNetworking */ = {
@@ -396,14 +364,12 @@
 				3DAE8F74184F44620030EA79 /* AFURLConnectionOperation.m in Sources */,
 				3DAE8F71184F44620030EA79 /* AFHTTPSessionManager.m in Sources */,
 				3DAE8F75184F44620030EA79 /* AFURLRequestSerialization.m in Sources */,
-				3D7A53391864D4A9006506B7 /* Codegen_wrapper.cpp in Sources */,
-				3DAE8F57184F3FB60030EA79 /* MainViewController.mm in Sources */,
 				3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */,
 				3DAE8F70184F44620030EA79 /* AFHTTPRequestOperationManager.m in Sources */,
 				3DAE8F73184F44620030EA79 /* AFSecurityPolicy.m in Sources */,
 				3DAE8F76184F44620030EA79 /* AFURLResponseSerialization.m in Sources */,
 				3DAE8F6F184F44620030EA79 /* AFHTTPRequestOperation.m in Sources */,
-				3D7A533A1864D4A9006506B7 /* GetPCMFromFile.cpp in Sources */,
+				3D209E241865831E00B6538C /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,7 +506,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kittipun/Desktop/MusicRecognizer,
+					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -560,7 +526,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/kittipun/Desktop/MusicRecognizer,
+					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
