@@ -17,11 +17,6 @@
 		3D89C18F1830E7A900926994 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D89C18E1830E7A900926994 /* main.m */; };
 		3D89C1931830E7AA00926994 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D89C1921830E7AA00926994 /* AppDelegate.m */; };
 		3D89C19E1830E7AA00926994 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C19D1830E7AA00926994 /* Images.xcassets */; };
-		3D89C1A51830E7AA00926994 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1A41830E7AA00926994 /* XCTest.framework */; };
-		3D89C1A61830E7AA00926994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1821830E7A900926994 /* Foundation.framework */; };
-		3D89C1A71830E7AA00926994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1861830E7A900926994 /* UIKit.framework */; };
-		3D89C1AF1830E7AA00926994 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3D89C1AD1830E7AA00926994 /* InfoPlist.strings */; };
-		3D89C1B11830E7AA00926994 /* MusicRecognizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D89C1B01830E7AA00926994 /* MusicRecognizerTests.m */; };
 		3DAE8F1D184F1A1A0030EA79 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F1C184F1A1A0030EA79 /* AVFoundation.framework */; };
 		3DAE8F1F184F1A2A0030EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F1E184F1A2A0030EA79 /* AudioToolbox.framework */; };
 		3DAE8F21184F1A310030EA79 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F20184F1A310030EA79 /* MediaPlayer.framework */; };
@@ -60,16 +55,6 @@
 		59EF59F718713F4F002F0388 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59EF59F518713F4F002F0388 /* search@2x.png */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3D89C1A81830E7AA00926994 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3D89C1771830E7A700926994 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3D89C17E1830E7A800926994;
-			remoteInfo = MusicRecognizer;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		3D209E231865831E00B6538C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3D5553011871281900FE4E30 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -85,7 +70,6 @@
 		3D89C1911830E7AA00926994 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D89C1921830E7AA00926994 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3D89C19D1830E7AA00926994 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3D89C1A31830E7AA00926994 /* MusicRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89C1A41830E7AA00926994 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3D89C1AC1830E7AA00926994 /* MusicRecognizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MusicRecognizerTests-Info.plist"; sourceTree = "<group>"; };
 		3D89C1AE1830E7AA00926994 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -155,16 +139,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D89C1A01830E7AA00926994 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D89C1A51830E7AA00926994 /* XCTest.framework in Frameworks */,
-				3D89C1A71830E7AA00926994 /* UIKit.framework in Frameworks */,
-				3D89C1A61830E7AA00926994 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -183,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				3D89C17F1830E7A800926994 /* Chordle.app */,
-				3D89C1A31830E7AA00926994 /* MusicRecognizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -330,24 +303,6 @@
 			productReference = 3D89C17F1830E7A800926994 /* Chordle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3D89C1A21830E7AA00926994 /* MusicRecognizerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3D89C1B71830E7AA00926994 /* Build configuration list for PBXNativeTarget "MusicRecognizerTests" */;
-			buildPhases = (
-				3D89C19F1830E7AA00926994 /* Sources */,
-				3D89C1A01830E7AA00926994 /* Frameworks */,
-				3D89C1A11830E7AA00926994 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3D89C1A91830E7AA00926994 /* PBXTargetDependency */,
-			);
-			name = MusicRecognizerTests;
-			productName = MusicRecognizerTests;
-			productReference = 3D89C1A31830E7AA00926994 /* MusicRecognizerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -359,9 +314,6 @@
 				TargetAttributes = {
 					3D89C17E1830E7A800926994 = {
 						DevelopmentTeam = KLDSPHMD9M;
-					};
-					3D89C1A21830E7AA00926994 = {
-						TestTargetID = 3D89C17E1830E7A800926994;
 					};
 				};
 			};
@@ -379,7 +331,6 @@
 			projectRoot = "";
 			targets = (
 				3D89C17E1830E7A800926994 /* MusicRecognizer */,
-				3D89C1A21830E7AA00926994 /* MusicRecognizerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -415,14 +366,6 @@
 				5974454218708F8300EF99DC /* speechbubble.png in Resources */,
 				59EF59F718713F4F002F0388 /* search@2x.png in Resources */,
 				3DD6929218706EA500CD1A03 /* whatshot.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3D89C1A11830E7AA00926994 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D89C1AF1830E7AA00926994 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,23 +420,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3D89C19F1830E7AA00926994 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D89C1B11830E7AA00926994 /* MusicRecognizerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3D89C1A91830E7AA00926994 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3D89C17E1830E7A800926994 /* MusicRecognizer */;
-			targetProxy = 3D89C1A81830E7AA00926994 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3D89C18B1830E7A900926994 /* InfoPlist.strings */ = {
@@ -601,10 +528,7 @@
 				GCC_PREFIX_HEADER = "MusicRecognizer/MusicRecognizer-Prefix.pch";
 				INFOPLIST_FILE = "MusicRecognizer/MusicRecognizer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Chordle;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -622,55 +546,10 @@
 				GCC_PREFIX_HEADER = "MusicRecognizer/MusicRecognizer-Prefix.pch";
 				INFOPLIST_FILE = "MusicRecognizer/MusicRecognizer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/kittipun/Documents/GitHub/harmonic_progression_matcher/ios/MusicRecognizer,
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = Chordle;
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		3D89C1B81830E7AA00926994 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRecognizer.app/MusicRecognizer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRecognizer/MusicRecognizer-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "MusicRecognizerTests/MusicRecognizerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3D89C1B91830E7AA00926994 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/MusicRecognizer.app/MusicRecognizer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MusicRecognizer/MusicRecognizer-Prefix.pch";
-				INFOPLIST_FILE = "MusicRecognizerTests/MusicRecognizerTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -691,15 +570,6 @@
 			buildConfigurations = (
 				3D89C1B51830E7AA00926994 /* Debug */,
 				3D89C1B61830E7AA00926994 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3D89C1B71830E7AA00926994 /* Build configuration list for PBXNativeTarget "MusicRecognizerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3D89C1B81830E7AA00926994 /* Debug */,
-				3D89C1B91830E7AA00926994 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

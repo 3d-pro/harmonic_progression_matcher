@@ -77,7 +77,7 @@
         <scene sceneID="Q1N-mX-LP8">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="c78-e6-snu" customClass="MainTabBarViewController" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="KhJ-WQ-NMk">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
