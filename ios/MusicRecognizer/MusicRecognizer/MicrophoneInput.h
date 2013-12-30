@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioServices.h>
 
 @interface MicrophoneInput : UIViewController {
 	AVAudioPlayer *audioPlayer;

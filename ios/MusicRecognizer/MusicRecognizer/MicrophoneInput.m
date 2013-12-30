@@ -24,14 +24,16 @@
 	// Init audio with record capability
 	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 	[audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
-	
+	[audioSession overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
+    
 	NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:10];
 	[recordSettings setObject:[NSNumber numberWithInt: kAudioFormatMPEG4AAC] forKey: AVFormatIDKey];
-	[recordSettings setObject:[NSNumber numberWithFloat:22050.0] forKey: AVSampleRateKey];
+	[recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
 	[recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
 	[recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-	
-	//set the export session's outputURL to <Documents>/output.caf
+    [recordSettings setObject:[NSNumber numberWithInt: AVAudioQualityMedium] forKey: AVEncoderAudioQualityKey];
+    
+	//set the export session's outputURL to <Documents>/output.m4a
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 	NSString *documentsDirectory = [paths objectAtIndex:0];
 	NSURL *outURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"output.m4a"]];
@@ -40,7 +42,7 @@
 	
 	NSError *error = nil;
 	audioRecorder = [[AVAudioRecorder alloc] initWithURL:outURL settings:recordSettings error:&error];
-	
+	audioRecorder.meteringEnabled = YES;
 	if ([audioRecorder prepareToRecord] == YES) {
 		[audioRecorder record];
 	} else {

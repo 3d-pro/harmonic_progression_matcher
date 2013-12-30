@@ -44,6 +44,8 @@
         [self.recorder stopRecording];
         [self.statusLabel setText:@"Finding..."];
         [self.extendlabel setText:@""];
+        [self.trackLabel setText:@""];
+        [self.artistLabel setText:@""];
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.m4a"];
@@ -56,6 +58,8 @@
         [self.recorder startRecording];
         [self.statusLabel setText:@"Recording..."];
         [self.extendlabel setText:@""];
+        [self.trackLabel setText:@""];
+        [self.artistLabel setText:@""];
         [NSTimer scheduledTimerWithTimeInterval:20.0
                                          target:self
                                        selector:@selector(recordPressed:)
@@ -79,9 +83,13 @@
         if (![metadata objectForKey:@"track"] || ![metadata objectForKey:@"artist"]) {
             [self.statusLabel setText:@"Not found! Please try again."];
             [self.extendlabel setText:@""];
+            [self.trackLabel setText:@""];
+            [self.artistLabel setText:@""];
         } else {
-            [self.statusLabel setText:[NSString stringWithFormat:@"%@ - %@",[metadata objectForKey:@"track"],[metadata objectForKey:@"artist"]]];
-            [self.extendlabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"release"]]];
+            [self.trackLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"track"]]];
+            [self.artistLabel setText:[NSString stringWithFormat:@"%@",[metadata objectForKey:@"artist"]]];
+            [self.statusLabel setText:@""];
+            [self.extendlabel setText:@""];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);

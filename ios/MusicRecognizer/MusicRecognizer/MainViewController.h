@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UILabel *extendlabel;
+@property (weak, nonatomic) IBOutlet UILabel *trackLabel;
+@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
 @property (strong, nonatomic) MicrophoneInput *recorder;
 @property (strong, nonatomic) NSDictionary *JSON;
 @property const char *fpCode;
