@@ -22,21 +22,21 @@
     UITabBarItem *tabBarItem4 = [tabBar.items objectAtIndex:3];
     
     [tabBarItem1 setTitle:@"Search"];
-    [tabBarItem1 setImage:[UIImage imageNamed:@"search.png"]];
-    [tabBarItem1 setSelectedImage:[UIImage imageNamed:@"search_selected.png"]];
+    [tabBarItem1 setImage:[[UIImage imageNamed:@"search.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem1 setSelectedImage:[[UIImage imageNamed:@"search_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
 
     
     [tabBarItem2 setTitle:@"History"];
-    [tabBarItem2 setImage:[UIImage imageNamed:@"history.png"]];
-    [tabBarItem2 setSelectedImage:[UIImage imageNamed:@"history_selected.png"]];
+    [tabBarItem2 setImage:[[UIImage imageNamed:@"history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem2 setSelectedImage:[[UIImage imageNamed:@"history_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     [tabBarItem3 setTitle:@"What's Hot"];
-    [tabBarItem3 setImage:[UIImage imageNamed:@"whatshot.png"]];
-    [tabBarItem3 setSelectedImage:[UIImage imageNamed:@"whatshot_selected.png"]];
+    [tabBarItem3 setImage:[[UIImage imageNamed:@"whatshot.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem3 setSelectedImage:[[UIImage imageNamed:@"whatshot_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     [tabBarItem4 setTitle:@"Profile"];
-    [tabBarItem4 setImage:[UIImage imageNamed:@"profile.png"]];
-    [tabBarItem4 setSelectedImage:[UIImage imageNamed:@"profile_selected.png"]];
+    [tabBarItem4 setImage:[[UIImage imageNamed:@"profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem4 setSelectedImage:[[UIImage imageNamed:@"profile_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :  [self colorWithHexString:@"ffffff"]}
                                              forState:UIControlStateNormal];
