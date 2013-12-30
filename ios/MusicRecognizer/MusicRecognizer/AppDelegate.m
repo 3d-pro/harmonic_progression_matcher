@@ -38,9 +38,9 @@
     [tabBarItem4 setImage:[UIImage imageNamed:@"profile.png"]];
     [tabBarItem4 setSelectedImage:[UIImage imageNamed:@"profile_selected.png"]];
     
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :  [self colorWithHexString:@"777777"]}
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :  [self colorWithHexString:@"ffffff"]}
                                              forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [self colorWithHexString:@"0093d8"]}
+    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [self colorWithHexString:@"74b2d7"]}
                                              forState:UIControlStateHighlighted];
     
     return YES;
