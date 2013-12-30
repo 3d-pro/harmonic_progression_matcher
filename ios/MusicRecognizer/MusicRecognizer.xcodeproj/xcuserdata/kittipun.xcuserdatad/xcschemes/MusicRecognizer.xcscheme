@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3D89C17E1830E7A800926994"
-               BuildableName = "MusicRecognizer.app"
+               BuildableName = "Chordle.app"
                BlueprintName = "MusicRecognizer"
                ReferencedContainer = "container:MusicRecognizer.xcodeproj">
             </BuildableReference>
@@ -28,22 +28,12 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D89C1A21830E7AA00926994"
-               BuildableName = "MusicRecognizerTests.xctest"
-               BlueprintName = "MusicRecognizerTests"
-               ReferencedContainer = "container:MusicRecognizer.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D89C17E1830E7A800926994"
-            BuildableName = "MusicRecognizer.app"
+            BuildableName = "Chordle.app"
             BlueprintName = "MusicRecognizer"
             ReferencedContainer = "container:MusicRecognizer.xcodeproj">
          </BuildableReference>
@@ -62,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D89C17E1830E7A800926994"
-            BuildableName = "MusicRecognizer.app"
+            BuildableName = "Chordle.app"
             BlueprintName = "MusicRecognizer"
             ReferencedContainer = "container:MusicRecognizer.xcodeproj">
          </BuildableReference>
@@ -80,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3D89C17E1830E7A800926994"
-            BuildableName = "MusicRecognizer.app"
+            BuildableName = "Chordle.app"
             BlueprintName = "MusicRecognizer"
             ReferencedContainer = "container:MusicRecognizer.xcodeproj">
          </BuildableReference>

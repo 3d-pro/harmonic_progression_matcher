@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		350DA0F5C1064C399BD6BC21 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F09255371FA842ACA27CE0A6 /* libPods.a */; };
 		3D209E241865831E00B6538C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D209E231865831E00B6538C /* MainViewController.m */; };
+		3D5553031871281A00FE4E30 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5553021871281A00FE4E30 /* RegisterViewController.m */; };
 		3D89C1831830E7A900926994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1821830E7A900926994 /* Foundation.framework */; };
 		3D89C1851830E7A900926994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1841830E7A900926994 /* CoreGraphics.framework */; };
 		3D89C1871830E7A900926994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1861830E7A900926994 /* UIKit.framework */; };
@@ -71,6 +72,8 @@
 
 /* Begin PBXFileReference section */
 		3D209E231865831E00B6538C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		3D5553011871281900FE4E30 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		3D5553021871281A00FE4E30 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		3D89C17F1830E7A800926994 /* Chordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89C1821830E7A900926994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D89C1841830E7A900926994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -213,6 +216,8 @@
 				3D89C1911830E7AA00926994 /* AppDelegate.h */,
 				3D89C1921830E7AA00926994 /* AppDelegate.m */,
 				3DD6926918706E4900CD1A03 /* Main.storyboard */,
+				3D5553011871281900FE4E30 /* RegisterViewController.h */,
+				3D5553021871281A00FE4E30 /* RegisterViewController.m */,
 				3D89C19D1830E7AA00926994 /* Images.xcassets */,
 				3D89C1891830E7A900926994 /* Supporting Files */,
 			);
@@ -468,6 +473,7 @@
 				3DD6927118706E4900CD1A03 /* MainTabBarViewController.m in Sources */,
 				3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */,
 				3D209E241865831E00B6538C /* MainViewController.m in Sources */,
+				3D5553031871281A00FE4E30 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
