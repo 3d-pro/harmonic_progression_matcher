@@ -60,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0039215688593685627" green="0.70588237047195435" blue="0.98431378602981567" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.45490196078431372" green="0.69803921568627447" blue="0.84313725490196079" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chordle" id="X2I-EL-Lrj"/>
                     <connections>
@@ -173,7 +173,7 @@
                     <view key="view" contentMode="scaleToFill" id="C1E-wb-gG8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0039215688589999999" green="0.70588237050000002" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.4549019608" green="0.69803921570000005" blue="0.84313725490000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="iB6-Tf-71b"/>
                 </viewController>
@@ -222,7 +222,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0039215688589999999" green="0.70588237050000002" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.4549019608" green="0.69803921570000005" blue="0.84313725490000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="kLG-2t-ple"/>
                     <connections>
@@ -430,7 +430,7 @@
                     <view key="view" contentMode="scaleToFill" id="IUJ-CX-tU2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0039215688589999999" green="0.70588237050000002" blue="0.98431378599999997" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.4549019608" green="0.69803921570000005" blue="0.84313725490000002" alpha="1" colorSpace="deviceRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Register" id="W1w-ot-bvm">
