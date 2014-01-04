@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "AFNetworking.h"
 
-@interface SigninViewController : UIViewController
+@interface SigninViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UITextField *usernameTextField, *passwordTextField;
 @property (strong, nonatomic) NSString *tokenPath;
 @property (strong, nonatomic) NSMutableArray *tokenDict;
 

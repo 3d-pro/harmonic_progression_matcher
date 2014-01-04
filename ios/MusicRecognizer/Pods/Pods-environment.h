@@ -48,11 +48,101 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 0
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 3
 
+// BZGFormField
+#define COCOAPODS_POD_AVAILABLE_BZGFormField
+#define COCOAPODS_VERSION_MAJOR_BZGFormField 1
+#define COCOAPODS_VERSION_MINOR_BZGFormField 1
+#define COCOAPODS_VERSION_PATCH_BZGFormField 0
+
 // Canvas
 #define COCOAPODS_POD_AVAILABLE_Canvas
 #define COCOAPODS_VERSION_MAJOR_Canvas 0
 #define COCOAPODS_VERSION_MINOR_Canvas 1
 #define COCOAPODS_VERSION_PATCH_Canvas 0
+
+// DLAlertView
+#define COCOAPODS_POD_AVAILABLE_DLAlertView
+#define COCOAPODS_VERSION_MAJOR_DLAlertView 1
+#define COCOAPODS_VERSION_MINOR_DLAlertView 0
+#define COCOAPODS_VERSION_PATCH_DLAlertView 0
+
+// DejalActivityView
+#define COCOAPODS_POD_AVAILABLE_DejalActivityView
+#define COCOAPODS_VERSION_MAJOR_DejalActivityView 1
+#define COCOAPODS_VERSION_MINOR_DejalActivityView 1
+#define COCOAPODS_VERSION_PATCH_DejalActivityView 0
+
+// HATransparentView
+#define COCOAPODS_POD_AVAILABLE_HATransparentView
+#define COCOAPODS_VERSION_MAJOR_HATransparentView 0
+#define COCOAPODS_VERSION_MINOR_HATransparentView 2
+#define COCOAPODS_VERSION_PATCH_HATransparentView 0
+
+// HexColors
+#define COCOAPODS_POD_AVAILABLE_HexColors
+#define COCOAPODS_VERSION_MAJOR_HexColors 2
+#define COCOAPODS_VERSION_MINOR_HexColors 2
+#define COCOAPODS_VERSION_PATCH_HexColors 1
+
+// KKProgressTimer
+#define COCOAPODS_POD_AVAILABLE_KKProgressTimer
+#define COCOAPODS_VERSION_MAJOR_KKProgressTimer 0
+#define COCOAPODS_VERSION_MINOR_KKProgressTimer 0
+#define COCOAPODS_VERSION_PATCH_KKProgressTimer 1
+
+// MZTimerLabel
+#define COCOAPODS_POD_AVAILABLE_MZTimerLabel
+#define COCOAPODS_VERSION_MAJOR_MZTimerLabel 0
+#define COCOAPODS_VERSION_MINOR_MZTimerLabel 2
+#define COCOAPODS_VERSION_PATCH_MZTimerLabel 1
+
+// NZCircularImageView
+#define COCOAPODS_POD_AVAILABLE_NZCircularImageView
+#define COCOAPODS_VERSION_MAJOR_NZCircularImageView 0
+#define COCOAPODS_VERSION_MINOR_NZCircularImageView 0
+#define COCOAPODS_VERSION_PATCH_NZCircularImageView 2
+
+// PulsingHalo
+#define COCOAPODS_POD_AVAILABLE_PulsingHalo
+#define COCOAPODS_VERSION_MAJOR_PulsingHalo 0
+#define COCOAPODS_VERSION_MINOR_PulsingHalo 0
+#define COCOAPODS_VERSION_PATCH_PulsingHalo 1
+
+// SDWebImage
+#define COCOAPODS_POD_AVAILABLE_SDWebImage
+#define COCOAPODS_VERSION_MAJOR_SDWebImage 3
+#define COCOAPODS_VERSION_MINOR_SDWebImage 5
+#define COCOAPODS_VERSION_PATCH_SDWebImage 1
+
+// SDWebImage/Core
+#define COCOAPODS_POD_AVAILABLE_SDWebImage_Core
+#define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
+#define COCOAPODS_VERSION_MINOR_SDWebImage_Core 5
+#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 1
+
+// TSMessages
+#define COCOAPODS_POD_AVAILABLE_TSMessages
+#define COCOAPODS_VERSION_MAJOR_TSMessages 0
+#define COCOAPODS_VERSION_MINOR_TSMessages 9
+#define COCOAPODS_VERSION_PATCH_TSMessages 4
+
+// TTCounterLabel
+#define COCOAPODS_POD_AVAILABLE_TTCounterLabel
+#define COCOAPODS_VERSION_MAJOR_TTCounterLabel 1
+#define COCOAPODS_VERSION_MINOR_TTCounterLabel 0
+#define COCOAPODS_VERSION_PATCH_TTCounterLabel 3
+
+// TTTAttributedLabel
+#define COCOAPODS_POD_AVAILABLE_TTTAttributedLabel
+#define COCOAPODS_VERSION_MAJOR_TTTAttributedLabel 1
+#define COCOAPODS_VERSION_MINOR_TTTAttributedLabel 7
+#define COCOAPODS_VERSION_PATCH_TTTAttributedLabel 5
+
+// UIActivityIndicator-for-SDWebImage
+#define COCOAPODS_POD_AVAILABLE_UIActivityIndicator_for_SDWebImage
+#define COCOAPODS_VERSION_MAJOR_UIActivityIndicator_for_SDWebImage 1
+#define COCOAPODS_VERSION_MINOR_UIActivityIndicator_for_SDWebImage 0
+#define COCOAPODS_VERSION_PATCH_UIActivityIndicator_for_SDWebImage 3
 
 // VCTransitionsLibrary
 #define COCOAPODS_POD_AVAILABLE_VCTransitionsLibrary

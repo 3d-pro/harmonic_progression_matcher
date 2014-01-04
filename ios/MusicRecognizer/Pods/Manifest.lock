@@ -17,17 +17,65 @@ PODS:
   - AFNetworking/Serialization (2.0.3)
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
+  - BZGFormField (1.1.0)
   - Canvas (0.1)
+  - DejalActivityView (1.1)
+  - DLAlertView (1.0)
+  - HATransparentView (0.2)
+  - HexColors (2.2.1)
+  - KKProgressTimer (0.0.1)
+  - MZTimerLabel (0.2.1)
+  - NZCircularImageView (0.0.2):
+    - UIActivityIndicator-for-SDWebImage (~> 1.0.3)
+  - PulsingHalo (0.0.1)
+  - SDWebImage (3.5.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.1)
+  - TSMessages (0.9.4):
+    - HexColors
+  - TTCounterLabel (1.0.3):
+    - TTTAttributedLabel (~> 1.7.1)
+  - TTTAttributedLabel (1.7.5)
+  - UIActivityIndicator-for-SDWebImage (1.0.3):
+    - SDWebImage (~> 3.2)
   - VCTransitionsLibrary (1.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - BZGFormField
   - Canvas
+  - DejalActivityView
+  - DLAlertView
+  - HATransparentView (~> 0.2)
+  - KKProgressTimer (from `http://github.com/gin0606/KKProgressTimer.git`)
+  - MZTimerLabel (~> 0.2.1)
+  - NZCircularImageView (~> 0.0.2)
+  - PulsingHalo
+  - TSMessages
+  - TTCounterLabel
   - VCTransitionsLibrary
+
+EXTERNAL SOURCES:
+  KKProgressTimer:
+    :git: http://github.com/gin0606/KKProgressTimer.git
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
+  BZGFormField: 2af89e2f99668617aca32337aeb70ed078b62abc
   Canvas: 1d94806aab1ef0486df719f80f47eccf40a08ae5
+  DejalActivityView: 4cb7aacb4334003203f297d6cc7dcc233a7f3d86
+  DLAlertView: d60c796e8bff9f8f013b6b601fb860d1a858b6a8
+  HATransparentView: 063914566e44b83b9e06fb919782278beadcf853
+  HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
+  KKProgressTimer: 87a1001670f911a827cab5d8afb776c5db259953
+  MZTimerLabel: 1ec7e65871aa808489a04ddf1933123f41b9eabc
+  NZCircularImageView: 621335fd2f255719a3cbff50cf8207398d50d926
+  PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
+  SDWebImage: a408b548a634b792372e07e753fc1079aff5032a
+  TSMessages: 5ab92604b02e49a755d2cc2baf114d2248a90977
+  TTCounterLabel: c5067a72c7110647a170c0b3e03a899324004ca3
+  TTTAttributedLabel: 1eb635d4d844cb7abce4d839faefca2a3409950d
+  UIActivityIndicator-for-SDWebImage: e712b97826395022ce7b4a4b56eb7194090c19d5
   VCTransitionsLibrary: e4c01ca7ed4bab4d79454558df815dad2272a591
 
 COCOAPODS: 0.29.0

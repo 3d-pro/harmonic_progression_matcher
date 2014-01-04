@@ -26,7 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.func = [[TypicalFunctions alloc] init];
     //[self.tableView setBackgroundView:nil];
     //[self.tableView setBackgroundColor:[self.func colorWithHexString:@"55a4cc"]];
     [[self.tableView headerViewForSection:0] setTintColor:[UIColor whiteColor]];

@@ -10,6 +10,8 @@
 #import "LoginViewController.h"
 #import "ProfileViewController.h"
 #import "ProfileNavViewController.h"
+#import <CEFoldAnimationController.h>
+#import <CEFlipAnimationController.h>
 
 @interface MainTabBarViewController : UITabBarController <UITabBarControllerDelegate>
 

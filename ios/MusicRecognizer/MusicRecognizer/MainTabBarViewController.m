@@ -12,7 +12,9 @@
 
 @end
 
-@implementation MainTabBarViewController
+@implementation MainTabBarViewController {
+    CEFoldAnimationController *_animationController;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,9 +36,13 @@
 	// Do any additional setup after loading the view.
 }
 
-//-(id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
-//    return UIViewAn
-//}
+-(id<UIViewControllerAnimatedTransitioning>)tabBarController:(UITabBarController *)tabBarController animationControllerForTransitionFromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC {
+    NSUInteger fromVCIndex = [tabBarController.viewControllers indexOfObject:fromVC];
+    NSUInteger toVCIndex = [tabBarController.viewControllers indexOfObject:toVC];
+    
+    _animationController.reverse = fromVCIndex < toVCIndex;
+    return _animationController;
+}
 
 - (void)viewWillAppear:(BOOL)animated {
     //init nav controller.

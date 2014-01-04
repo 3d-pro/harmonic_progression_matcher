@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 	// Do any additional setup after loading the view.
 }
 
@@ -37,6 +38,26 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell;
+    if ([indexPath row] == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Username"];
+        self.usernameTextField = (UITextField *) [cell viewWithTag:4];
+    } else if ([indexPath row] == 1) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Password"];
+        self.passwordTextField = (UITextField *) [cell viewWithTag:5];
+    }
+    return cell;
 }
 
 - (IBAction)backPressed:(id)sender {
