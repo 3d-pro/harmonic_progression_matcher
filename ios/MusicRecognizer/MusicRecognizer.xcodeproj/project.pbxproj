@@ -12,6 +12,9 @@
 		3D5553031871281A00FE4E30 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5553021871281A00FE4E30 /* RegisterViewController.m */; };
 		3D56492E18716D7200BF446C /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D56492D18716D7200BF446C /* HistoryViewController.m */; };
 		3D564930187194DC00BF446C /* micflat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D56492F187194DC00BF446C /* micflat.png */; };
+		3D5FAFF91876ACBE001CAA30 /* ProfileNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FAFF81876ACBE001CAA30 /* ProfileNavViewController.m */; };
+		3D5FAFFC1876ACE2001CAA30 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FAFFB1876ACE2001CAA30 /* ProfileViewController.m */; };
+		3D879BE318756733006FF5C1 /* TypicalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D879BE218756733006FF5C1 /* TypicalFunctions.m */; };
 		3D89C1831830E7A900926994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1821830E7A900926994 /* Foundation.framework */; };
 		3D89C1851830E7A900926994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1841830E7A900926994 /* CoreGraphics.framework */; };
 		3D89C1871830E7A900926994 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1861830E7A900926994 /* UIKit.framework */; };
@@ -28,6 +31,8 @@
 		3DAE8F29184F1A580030EA79 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F28184F1A580030EA79 /* SystemConfiguration.framework */; };
 		3DAE8F50184F1CE60030EA79 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAE8F4F184F1CE60030EA79 /* CoreAudio.framework */; };
 		3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */; };
+		3DC7B7941877E4FE003C527A /* cover_art_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DC7B7931877E4FE003C527A /* cover_art_test.jpg */; };
+		3DC7B7961877E6E9003C527A /* cover_art_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */; };
 		3DD6927018706E4900CD1A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6926918706E4900CD1A03 /* Main.storyboard */; };
 		3DD6927118706E4900CD1A03 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */; };
 		3DD6927218706E4900CD1A03 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926D18706E4900CD1A03 /* LoginViewController.m */; };
@@ -63,6 +68,12 @@
 		3D56492C18716D7200BF446C /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		3D56492D18716D7200BF446C /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		3D56492F187194DC00BF446C /* micflat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = micflat.png; sourceTree = "<group>"; };
+		3D5FAFF71876ACBE001CAA30 /* ProfileNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileNavViewController.h; sourceTree = "<group>"; };
+		3D5FAFF81876ACBE001CAA30 /* ProfileNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNavViewController.m; sourceTree = "<group>"; };
+		3D5FAFFA1876ACE2001CAA30 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		3D5FAFFB1876ACE2001CAA30 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3D879BE118756733006FF5C1 /* TypicalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypicalFunctions.h; sourceTree = "<group>"; };
+		3D879BE218756733006FF5C1 /* TypicalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypicalFunctions.m; sourceTree = "<group>"; };
 		3D89C17F1830E7A800926994 /* Chordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D89C1821830E7A900926994 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3D89C1841830E7A900926994 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -86,6 +97,8 @@
 		3DAE8F55184F3FB60030EA79 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneInput.h; sourceTree = "<group>"; };
 		3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneInput.m; sourceTree = "<group>"; };
+		3DC7B7931877E4FE003C527A /* cover_art_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_art_test.jpg; sourceTree = "<group>"; };
+		3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_art_test_2.jpg; sourceTree = "<group>"; };
 		3DD6926918706E4900CD1A03 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3DD6926A18706E4900CD1A03 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
@@ -221,6 +234,10 @@
 				3DD6926F18706E4900CD1A03 /* SigninViewController.m */,
 				3D5553011871281900FE4E30 /* RegisterViewController.h */,
 				3D5553021871281A00FE4E30 /* RegisterViewController.m */,
+				3D5FAFF71876ACBE001CAA30 /* ProfileNavViewController.h */,
+				3D5FAFF81876ACBE001CAA30 /* ProfileNavViewController.m */,
+				3D5FAFFA1876ACE2001CAA30 /* ProfileViewController.h */,
+				3D5FAFFB1876ACE2001CAA30 /* ProfileViewController.m */,
 			);
 			name = "ViewControllers Classes";
 			sourceTree = "<group>";
@@ -228,6 +245,8 @@
 		3DD6927518706E7100CD1A03 /* Others Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3D879BE118756733006FF5C1 /* TypicalFunctions.h */,
+				3D879BE218756733006FF5C1 /* TypicalFunctions.m */,
 				3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */,
 				3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */,
 			);
@@ -237,6 +256,8 @@
 		3DD6927618706E9500CD1A03 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */,
+				3DC7B7931877E4FE003C527A /* cover_art_test.jpg */,
 				59EF59F018713E48002F0388 /* search_selected.png */,
 				59EF59F118713E48002F0388 /* search_selected@2x.png */,
 				59EF59F418713F4F002F0388 /* search.png */,
@@ -339,11 +360,13 @@
 				59EF5A0C18714A6C002F0388 /* whatshot_selected.png in Resources */,
 				3DD6929C18706EA500CD1A03 /* chordle.png in Resources */,
 				59EF59FE18714A54002F0388 /* profile.png in Resources */,
+				3DC7B7961877E6E9003C527A /* cover_art_test_2.jpg in Resources */,
 				3DD6927018706E4900CD1A03 /* Main.storyboard in Resources */,
 				59EF5A0518714A5F002F0388 /* history_selected@2x.png in Resources */,
 				3D564930187194DC00BF446C /* micflat.png in Resources */,
 				59744540187083A400EF99DC /* testuser.jpg in Resources */,
 				59EF5A0E18714A6C002F0388 /* whatshot.png in Resources */,
+				3DC7B7941877E4FE003C527A /* cover_art_test.jpg in Resources */,
 				59EF5A0718714A5F002F0388 /* history@2x.png in Resources */,
 				5974454218708F8300EF99DC /* speechbubble.png in Resources */,
 				59EF59FD18714A54002F0388 /* profile_selected@2x.png in Resources */,
@@ -392,14 +415,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D879BE318756733006FF5C1 /* TypicalFunctions.m in Sources */,
 				3DD6927318706E4900CD1A03 /* SigninViewController.m in Sources */,
 				3D89C1931830E7AA00926994 /* AppDelegate.m in Sources */,
 				3D56492E18716D7200BF446C /* HistoryViewController.m in Sources */,
 				3D89C18F1830E7A900926994 /* main.m in Sources */,
 				3DD6927218706E4900CD1A03 /* LoginViewController.m in Sources */,
 				3DD6927118706E4900CD1A03 /* MainTabBarViewController.m in Sources */,
+				3D5FAFF91876ACBE001CAA30 /* ProfileNavViewController.m in Sources */,
 				3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */,
 				3D209E241865831E00B6538C /* MainViewController.m in Sources */,
+				3D5FAFFC1876ACE2001CAA30 /* ProfileViewController.m in Sources */,
 				3D5553031871281A00FE4E30 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

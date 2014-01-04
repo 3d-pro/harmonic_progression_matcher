@@ -18,13 +18,16 @@ PODS:
   - AFNetworking/UIKit (2.0.3):
     - AFNetworking/NSURLConnection
   - Canvas (0.1)
+  - VCTransitionsLibrary (1.3.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - Canvas
+  - VCTransitionsLibrary
 
 SPEC CHECKSUMS:
   AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
   Canvas: 1d94806aab1ef0486df719f80f47eccf40a08ae5
+  VCTransitionsLibrary: e4c01ca7ed4bab4d79454558df815dad2272a591
 
 COCOAPODS: 0.29.0

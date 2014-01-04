@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TypicalFunctions.h"
 
 @interface HistoryViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) TypicalFunctions *func;
 
 @end

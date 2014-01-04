@@ -7,9 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TypicalFunctions.h"
+#import "LoginViewController.h"
+#import "ProfileViewController.h"
+#import "ProfileNavViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIStoryboard *storyboard;
+@property (strong, nonatomic) LoginViewController *loginController;
+@property (strong, nonatomic) ProfileViewController *profileController;
+@property (strong, nonatomic) ProfileNavViewController *profileNavViewController;
+@property (strong, nonatomic) TypicalFunctions *func;
+@property (strong, nonatomic) NSString *tokenPath;
 
 @end

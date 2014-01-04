@@ -13,6 +13,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) NSString *tokenPath;
+@property (strong, nonatomic) NSMutableArray *tokenDict;
 
 - (IBAction)backPressed:(id)sender;
 - (IBAction)signinPressed:(id)sender;

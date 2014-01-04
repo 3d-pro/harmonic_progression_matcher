@@ -10,4 +10,6 @@
 
 @interface RegisterViewController : UIViewController
 
+- (IBAction)backPressed:(id)sender;
+
 @end
