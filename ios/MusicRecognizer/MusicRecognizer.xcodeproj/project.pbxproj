@@ -14,6 +14,7 @@
 		3D564930187194DC00BF446C /* micflat.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D56492F187194DC00BF446C /* micflat.png */; };
 		3D5FAFF91876ACBE001CAA30 /* ProfileNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FAFF81876ACBE001CAA30 /* ProfileNavViewController.m */; };
 		3D5FAFFC1876ACE2001CAA30 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5FAFFB1876ACE2001CAA30 /* ProfileViewController.m */; };
+		3D74331B1878A0CE00A6748F /* SAMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D74331A1878A0CE00A6748F /* SAMTextView.m */; };
 		3D879BE318756733006FF5C1 /* TypicalFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D879BE218756733006FF5C1 /* TypicalFunctions.m */; };
 		3D89C1831830E7A900926994 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1821830E7A900926994 /* Foundation.framework */; };
 		3D89C1851830E7A900926994 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D89C1841830E7A900926994 /* CoreGraphics.framework */; };
@@ -72,6 +73,8 @@
 		3D5FAFF81876ACBE001CAA30 /* ProfileNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileNavViewController.m; sourceTree = "<group>"; };
 		3D5FAFFA1876ACE2001CAA30 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		3D5FAFFB1876ACE2001CAA30 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		3D7433191878A0CE00A6748F /* SAMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAMTextView.h; sourceTree = "<group>"; };
+		3D74331A1878A0CE00A6748F /* SAMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAMTextView.m; sourceTree = "<group>"; };
 		3D879BE118756733006FF5C1 /* TypicalFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypicalFunctions.h; sourceTree = "<group>"; };
 		3D879BE218756733006FF5C1 /* TypicalFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypicalFunctions.m; sourceTree = "<group>"; };
 		3D89C17F1830E7A800926994 /* Chordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +248,8 @@
 		3DD6927518706E7100CD1A03 /* Others Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3D7433191878A0CE00A6748F /* SAMTextView.h */,
+				3D74331A1878A0CE00A6748F /* SAMTextView.m */,
 				3D879BE118756733006FF5C1 /* TypicalFunctions.h */,
 				3D879BE218756733006FF5C1 /* TypicalFunctions.m */,
 				3DAE8F58184F404B0030EA79 /* MicrophoneInput.h */,
@@ -426,6 +431,7 @@
 				3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */,
 				3D209E241865831E00B6538C /* MainViewController.m in Sources */,
 				3D5FAFFC1876ACE2001CAA30 /* ProfileViewController.m in Sources */,
+				3D74331B1878A0CE00A6748F /* SAMTextView.m in Sources */,
 				3D5553031871281A00FE4E30 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

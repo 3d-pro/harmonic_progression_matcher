@@ -29,6 +29,7 @@
     //[self.tableView setBackgroundView:nil];
     //[self.tableView setBackgroundColor:[self.func colorWithHexString:@"55a4cc"]];
     [[self.tableView headerViewForSection:0] setTintColor:[UIColor whiteColor]];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 	// Do any additional setup after loading the view.
 }
 

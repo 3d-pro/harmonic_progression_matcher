@@ -46,7 +46,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     //init nav controller.
-    self.profileNavViewController = [self.childViewControllers objectAtIndex:3];
+    self.profileNavViewController = [self.childViewControllers objectAtIndex:2];
     
     //check login status by using token file.
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {

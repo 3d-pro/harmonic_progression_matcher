@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <BZGFormField.h>
 #import "AFNetworking.h"
 
-@interface SigninViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface SigninViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, BZGFormFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) UITextField *usernameTextField, *passwordTextField;
+@property (strong, nonatomic) BZGFormField *usernameField, *passwordField;
 @property (strong, nonatomic) NSString *tokenPath;
-@property (strong, nonatomic) NSMutableArray *tokenDict;
+@property (strong, nonatomic) NSMutableDictionary *tokenDict;
 
 - (IBAction)backPressed:(id)sender;
 - (IBAction)signinPressed:(id)sender;

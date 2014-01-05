@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) UIBarButtonItem *logoutBarButton;
 @property (strong, nonatomic) NSString *tokenPath;
+@property (strong, nonatomic) NSMutableDictionary *tokenDict;
 @property (strong, nonatomic) ProfileNavViewController *profileNavViewController;
 @property (strong, nonatomic) LoginViewController *loginController;
 
