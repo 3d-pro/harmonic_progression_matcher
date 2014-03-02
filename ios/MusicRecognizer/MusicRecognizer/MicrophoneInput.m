@@ -29,9 +29,9 @@
 	NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:10];
 	[recordSettings setObject:[NSNumber numberWithInt: kAudioFormatMPEG4AAC] forKey: AVFormatIDKey];
 	[recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
-	[recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
+	[recordSettings setObject:[NSNumber numberWithInt:1] forKey:AVNumberOfChannelsKey];
 	[recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-    [recordSettings setObject:[NSNumber numberWithInt: AVAudioQualityMedium] forKey: AVEncoderAudioQualityKey];
+    [recordSettings setObject:[NSNumber numberWithInt: AVAudioQualityHigh] forKey: AVEncoderAudioQualityKey];
     
 	//set the export session's outputURL to <Documents>/output.m4a
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);

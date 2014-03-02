@@ -28,12 +28,6 @@ typedef BOOL (^BZGTextValidationBlock)(NSString *text);
 @property (strong, nonatomic) UIButton *leftIndicator;
 @property (strong, nonatomic) UIAlertView *alertView;
 
-/**
- * A Boolean value that determines whether or not the form field should perform validation when empty.
- * If the value of this property is NO (the default), empty form fields are assigned the validation state BZGFormFieldStateNone.
- */
-@property (assign, nonatomic) BOOL validatesWhenEmpty;
-
 /// The width of the left indicator when inactive, relative to the height of the form field.
 @property (assign, nonatomic) CGFloat leftIndicatorInactiveWidth;
 
@@ -66,6 +60,16 @@ typedef BOOL (^BZGTextValidationBlock)(NSString *text);
  * Sets the validation block for the text field.
  */
 - (void)setTextValidationBlock:(BZGTextValidationBlock)block;
+
+/**
+ * Sets the asynchronous validation block for the text field.
+ */
+- (void)setAsyncTextValidationBlock:(BZGTextValidationBlock)block;
+
+/**
+ Sets text for the `textField` and perform validation.
+ */
+- (void)setText:(NSString *)text validate:(BOOL)validate;
 
 @end
 

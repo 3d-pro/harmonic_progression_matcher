@@ -30,7 +30,30 @@
     //[self.tableView setBackgroundColor:[self.func colorWithHexString:@"55a4cc"]];
     [[self.tableView headerViewForSection:0] setTintColor:[UIColor whiteColor]];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tokenPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"token.json"];
 	// Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
+        self.tokenDict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:self.tokenPath] options:NSJSONReadingMutableContainers error:nil];
+        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://161.246.38.80:8080"]];
+        NSDictionary *parameters = @{@"username": [self.tokenDict objectForKey:@"username"]};
+        [manager GET:@"/history" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            if ([[responseObject objectForKey:@"message"] isEqualToString:@"Query success."]) {
+                self.historyArray = [responseObject objectForKey:@"history"];
+                [self.tableView reloadData];
+            }
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+    } else {
+        [self.tableView reloadData];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,24 +71,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
+        return [self.historyArray count];
+    } else {
+        return 1;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
-    UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
-    UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
-    UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
-    if ([indexPath row] == 0) {
-        titleLabel.text = @"ของขวัญ";
-        artistLabel.text = @"Musketeers";
-        coverImageView.image = [UIImage imageNamed:@"cover_art_test.jpg"];
-    } else if ([indexPath row] == 1) {
-        titleLabel.text = @"Take Back The Night";
-        artistLabel.text = @"Justin Timberlake";
-        coverImageView.image = [UIImage imageNamed:@"cover_art_test_2.jpg"];
+    UITableViewCell *cell;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
+        UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
+        UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
+        UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
+        
+        NSDictionary *songDict = [self.historyArray objectAtIndex:[indexPath row]];
+        titleLabel.text = [songDict objectForKey:@"title"];
+        artistLabel.text = [songDict objectForKey:@"artist"];
+        [DejalKeyboardActivityView activityViewForView:coverImageView];
+        __weak UIImageView *weakCoverImageView = coverImageView;
+        NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[songDict objectForKey:@"artist"],[songDict objectForKey:@"album"]];
+        NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+            weakCoverImageView.image = image;
+            [DejalKeyboardActivityView removeViewAnimated:YES];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+            NSLog(@"%@",error);
+        }];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"Not Login"];
     }
-    
     return cell;
 }
 

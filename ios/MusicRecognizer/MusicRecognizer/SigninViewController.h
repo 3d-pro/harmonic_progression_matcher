@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <BZGFormField.h>
-#import "AFNetworking.h"
+#import <DejalActivityView.h>
+#import <NZAlertView.h>
+#import <AFNetworking.h>
 
 @interface SigninViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, BZGFormFieldDelegate>
 

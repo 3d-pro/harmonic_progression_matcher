@@ -1,81 +1,77 @@
 PODS:
-  - AFNetworking (2.0.3):
+  - AFNetworking (2.1.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
     - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.0.3):
+  - AFNetworking/NSURLConnection (2.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.0.3):
+  - AFNetworking/NSURLSession (2.1.0):
     - AFNetworking/NSURLConnection
-  - AFNetworking/Reachability (2.0.3)
-  - AFNetworking/Security (2.0.3)
-  - AFNetworking/Serialization (2.0.3)
-  - AFNetworking/UIKit (2.0.3):
+  - AFNetworking/Reachability (2.1.0)
+  - AFNetworking/Security (2.1.0)
+  - AFNetworking/Serialization (2.1.0)
+  - AFNetworking/UIKit (2.1.0):
     - AFNetworking/NSURLConnection
-  - BZGFormField (1.1.0)
+  - BZGFormField (1.1.1)
   - Canvas (0.1)
-  - DejalActivityView (1.1)
-  - DLAlertView (1.0)
-  - HATransparentView (0.2)
+  - DejalActivityView (1.2)
+  - GKImagePicker@arkuana (0.0.3)
   - HexColors (2.2.1)
-  - KKProgressTimer (0.0.1)
-  - MZTimerLabel (0.2.1)
+  - M13ProgressSuite (1.0.0)
+  - NZAlertView (0.0.5):
+    - UIImage-Helpers (~> 0.0.1)
   - NZCircularImageView (0.0.2):
     - UIActivityIndicator-for-SDWebImage (~> 1.0.3)
-  - PulsingHalo (0.0.1)
-  - SDWebImage (3.5.1):
+  - RNBlurModalView (0.1.0)
+  - SDWebImage (3.5.2):
     - SDWebImage/Core
-  - SDWebImage/Core (3.5.1)
+  - SDWebImage/Core (3.5.2)
+  - SFRoundProgressCounterView (0.0.3):
+    - TTTAttributedLabel (~> 1.7.1)
   - TSMessages (0.9.4):
     - HexColors
-  - TTCounterLabel (1.0.3):
-    - TTTAttributedLabel (~> 1.7.1)
   - TTTAttributedLabel (1.7.5)
   - UIActivityIndicator-for-SDWebImage (1.0.3):
     - SDWebImage (~> 3.2)
-  - VCTransitionsLibrary (1.3.0)
+  - UIImage-Helpers (0.0.2)
+  - VCTransitionsLibrary (1.4.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - BZGFormField
   - Canvas
   - DejalActivityView
-  - DLAlertView
-  - HATransparentView (~> 0.2)
-  - KKProgressTimer (from `http://github.com/gin0606/KKProgressTimer.git`)
-  - MZTimerLabel (~> 0.2.1)
+  - GKImagePicker@arkuana
+  - M13ProgressSuite (~> 1.0.0)
+  - NZAlertView
   - NZCircularImageView (~> 0.0.2)
-  - PulsingHalo
+  - RNBlurModalView (~> 0.1.0)
+  - SFRoundProgressCounterView
   - TSMessages
-  - TTCounterLabel
   - VCTransitionsLibrary
 
-EXTERNAL SOURCES:
-  KKProgressTimer:
-    :git: http://github.com/gin0606/KKProgressTimer.git
-
 SPEC CHECKSUMS:
-  AFNetworking: e499052cbf3d743e9bb727bb37adb9dc2547ba15
-  BZGFormField: 2af89e2f99668617aca32337aeb70ed078b62abc
+  AFNetworking: c7d7901a83f631414c7eda1737261f696101a5cd
+  BZGFormField: 33de12659f977d04da345940ba737d3174702cbe
   Canvas: 1d94806aab1ef0486df719f80f47eccf40a08ae5
-  DejalActivityView: 4cb7aacb4334003203f297d6cc7dcc233a7f3d86
-  DLAlertView: d60c796e8bff9f8f013b6b601fb860d1a858b6a8
-  HATransparentView: 063914566e44b83b9e06fb919782278beadcf853
+  DejalActivityView: 3a7f7a2be287c0f25f547762815c40709b02169c
+  GKImagePicker@arkuana: a5a0dca241c616cf4aba31ffa81be8dcb0638eef
   HexColors: 3a68db077cd6572a8f7d4aa1add284dd2436a934
-  KKProgressTimer: 87a1001670f911a827cab5d8afb776c5db259953
-  MZTimerLabel: 1ec7e65871aa808489a04ddf1933123f41b9eabc
+  M13ProgressSuite: 34c28a6eb72313660b4676ec2f05742a665700a7
+  NZAlertView: f966e974133ef9443728c761de59437f1ad65ab0
   NZCircularImageView: 621335fd2f255719a3cbff50cf8207398d50d926
-  PulsingHalo: 6c5b7e18ca5c6c1319d5e2fd277f123ed74a1435
-  SDWebImage: a408b548a634b792372e07e753fc1079aff5032a
+  RNBlurModalView: ab3855ced43749cb0fb4d370160bd2908476c8b6
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
+  SFRoundProgressCounterView: e4693f3f208d253ffb995965e68fa9e82bfa78a4
   TSMessages: 5ab92604b02e49a755d2cc2baf114d2248a90977
-  TTCounterLabel: c5067a72c7110647a170c0b3e03a899324004ca3
   TTTAttributedLabel: 1eb635d4d844cb7abce4d839faefca2a3409950d
   UIActivityIndicator-for-SDWebImage: e712b97826395022ce7b4a4b56eb7194090c19d5
-  VCTransitionsLibrary: e4c01ca7ed4bab4d79454558df815dad2272a591
+  UIImage-Helpers: 085a931740604e2e3256a70217bef6436d1a2ca8
+  VCTransitionsLibrary: 328859e78311d45cf393a69a879417133a68c309
 
 COCOAPODS: 0.29.0

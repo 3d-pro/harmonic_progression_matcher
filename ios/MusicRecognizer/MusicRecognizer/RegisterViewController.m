@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.imagePicker = [[GKImagePicker alloc] init];
+    self.imagePicker.delegate = self;
+    self.imagePicker.cropSize = CGSizeMake(116.,116.);
 	// Do any additional setup after loading the view.
 }
 
@@ -96,18 +99,23 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"Bio"];
         self.bioTextView = (SAMTextView *) [cell viewWithTag:8];
         self.bioTextView.placeholder = @"Describe Yourself Here";
+        self.profileImageView = (NZCircularImageView *) [cell viewWithTag:9];
     }
     return cell;
 }
 
 - (IBAction)backPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{[DejalBezelActivityView removeViewAnimated:YES];}];
 }
 
 - (IBAction)registerPressed:(id)sender {
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading.."];
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://161.246.38.80:8080"]];
     NSDictionary *parameters = @{@"username": self.usernameField.textField.text, @"password": self.passwordField.textField.text, @"bio":self.bioTextView.text};
-    [manager POST:@"/register" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSData *imageData = UIImageJPEGRepresentation([self.profileImageView image], 0.7);
+    [manager POST:@"/register" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [formData appendPartWithFileData:imageData name:@"files" fileName:@"output.m4a" mimeType:@"image/jpeg"];
+        } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         if ([[responseObject objectForKey:@"message"] isEqualToString:@"Register success."]) {
             //create session path
@@ -131,11 +139,34 @@
             }
             [self dismissViewControllerAnimated:YES completion:nil];
         } else {
-            
+            NZAlertView *failedAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                                    title:@"Register Failed"                                                                   message:@"Something not right. Please recheck all the info and try again."
+                                                                 delegate:nil];
+            [failedAlert setStatusBarColor:[UIColor redColor]];
+            [failedAlert setTextAlignment:NSTextAlignmentCenter];
+            [failedAlert show];
+            [DejalBezelActivityView removeViewAnimated:YES];
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        NZAlertView *errorAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                               title:@"Register Error"
+                                                             message:@"There was a problem connecting to the network!"
+                                                            delegate:nil];
+        [errorAlert setStatusBarColor:[UIColor redColor]];
+        [errorAlert setTextAlignment:NSTextAlignmentCenter];
+        [errorAlert show];
+        [DejalBezelActivityView removeViewAnimated:YES];
     }];
 }
+
+- (IBAction)imagePickerPressed:(id)sender {
+    [self.imagePicker showActionSheetOnViewController:self onPopoverFromView:self.view];
+}
+
+- (void)imagePicker:(GKImagePicker *)imagePicker pickedImage:(UIImage *)image {
+    [self.profileImageView setImage:image];
+}
+
 
 @end

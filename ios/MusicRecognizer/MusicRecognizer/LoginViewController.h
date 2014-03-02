@@ -7,12 +7,24 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <DejalActivityView.h>
+#import <AFNetworking.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "TypicalFunctions.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *signinButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (strong, nonatomic) IBOutlet UIView *profileView;
+@property (strong, nonatomic) IBOutlet UIView *loginView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) UIBarButtonItem *logoutBarButton;
+@property (strong, nonatomic) NSString *tokenPath;
+@property (strong, nonatomic) NSMutableArray *historyArray;
+@property (strong, nonatomic) NSMutableDictionary *tokenDict;
 @property (strong, nonatomic) TypicalFunctions *func;
+
+- (void)loadHistory;
 
 @end

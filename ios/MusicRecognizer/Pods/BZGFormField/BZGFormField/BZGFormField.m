@@ -20,12 +20,15 @@ alpha:1.0]
 #define DEFAULT_VALID_COLOR UIColorFromRGB(0x2ECC71)
 #define DEFAULT_INVALID_COLOR UIColorFromRGB(0xE74C3C)
 
+static NSString * const kValidationAnimationKey = @"validationAnimationKey";
+
 @implementation BZGFormField {
     CGFloat _currentLeftIndicatorAspectRatio;
     BZGLeftIndicatorState _currentLeftIndicatorState;
     BZGFormFieldState _currentFormFieldState;
 
     BZGTextValidationBlock _textValidationBlock;
+    BZGTextValidationBlock _asyncTextValidationBlock;
 }
 
 #pragma mark - Public
@@ -44,6 +47,20 @@ alpha:1.0]
 - (void)setTextValidationBlock:(BZGTextValidationBlock)block
 {
     _textValidationBlock = block;
+}
+
+- (void)setAsyncTextValidationBlock:(BZGTextValidationBlock)block
+{
+    _asyncTextValidationBlock = block;
+}
+
+- (void)setText:(NSString *)text validate:(BOOL)validate
+{
+    self.textField.text = text;
+
+    if (validate) {
+        [self.textField.delegate textFieldDidEndEditing:self.textField];
+    }
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -78,13 +95,12 @@ alpha:1.0]
     self.leftIndicatorValidColor = DEFAULT_VALID_COLOR;
     self.leftIndicatorNoneColor = DEFAULT_NONE_COLOR;
 
-    self.validatesWhenEmpty = NO;
-
     self.textField = [[UITextField alloc] init];
     self.textField.borderStyle = UITextBorderStyleNone;
     self.textField.delegate = self;
     self.textField.autocorrectionType = UITextAutocorrectionTypeNo;
     self.textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    self.textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.textField.text = @" ";
     [self addSubview:self.textField];
 
@@ -115,9 +131,50 @@ alpha:1.0]
 
 }
 
-- (void) dealloc {
+- (void)dealloc
+{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
+- (CAAnimation *)validationInProgressAnimation
+{
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    animation.fromValue = (id)self.leftIndicatorValidColor.CGColor;
+    animation.toValue = (id)self.leftIndicatorNoneColor.CGColor;
+    animation.autoreverses = YES;
+    animation.repeatCount = HUGE_VALF;
+    animation.duration = 0.75f;
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    return animation;
+}
+
+- (void)asyncValidateWithText:(NSString *)text
+{
+    //skip async check if async block hasn't been set
+    if (!_asyncTextValidationBlock) {
+        [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateValid animated:NO];
+        return;
+    }
+    
+    if (![self.leftIndicator.layer animationForKey:kValidationAnimationKey]) {
+        [self.leftIndicator.layer addAnimation:[self validationInProgressAnimation] forKey:kValidationAnimationKey];
+    }
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        BOOL isValid = _asyncTextValidationBlock(text);
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf.leftIndicator.layer removeAnimationForKey:kValidationAnimationKey];
+            if (isValid) {
+                [weakSelf updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateValid animated:NO];
+            } else {
+                [weakSelf updateLeftIndicatorState:BZGLeftIndicatorStateActive formFieldState:BZGFormFieldStateInvalid animated:NO];
+            }
+        });
+    });
+}
+
 
 #pragma mark - Drawing
 
@@ -217,10 +274,10 @@ alpha:1.0]
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    if (textField.text.length == 0 && !self.validatesWhenEmpty) {
+    if (textField.text.length == 0) {
         [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateNone animated:NO];
     } else if (_textValidationBlock(textField.text)) {
-        [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateValid animated:NO];
+        [self asyncValidateWithText:textField.text];
     } else {
         [self updateLeftIndicatorState:BZGLeftIndicatorStateActive formFieldState:BZGFormFieldStateInvalid animated:YES];
     }
@@ -230,12 +287,14 @@ alpha:1.0]
     }
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+- (BOOL)textField:(UITextField *)textField
+shouldChangeCharactersInRange:(NSRange)range
+replacementString:(NSString *)string
 {
     NSString *newText = [textField.text stringByReplacingCharactersInRange:range withString:string];
 
     if (_textValidationBlock(newText)) {
-        [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateValid animated:NO];
+        [self asyncValidateWithText:newText];
     } else {
         [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateInvalid animated:NO];
     }
@@ -273,15 +332,8 @@ alpha:1.0]
 - (void)textFieldTextDidChange:(NSNotification *)notification
 {
     UITextField *textField = (UITextField *)notification.object;
-    if ([textField isEqual:self.textField]) {
-        // Secure text fields clear on begin editing on iOS6+.
-        // If it seems like the text field has been cleared,
-        // invoke the text change delegate method again to ensure proper validation.
-        if (textField.secureTextEntry && textField.text.length <= 1) {
-            [self.textField.delegate textField:self.textField
-                 shouldChangeCharactersInRange:NSMakeRange(0, textField.text.length)
-                             replacementString:textField.text];
-        }
+    if ([textField isEqual:self.textField] && !textField.text.length) {
+        [self updateLeftIndicatorState:BZGLeftIndicatorStateInactive formFieldState:BZGFormFieldStateNone animated:NO];
     }
 }
 

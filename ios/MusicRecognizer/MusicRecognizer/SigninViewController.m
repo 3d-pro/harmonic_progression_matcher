@@ -88,10 +88,12 @@
 }
 
 - (IBAction)backPressed:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{[DejalBezelActivityView removeViewAnimated:YES];}];
 }
 
 - (IBAction)signinPressed:(id)sender {
+    [self.view endEditing:YES];
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading.."];
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://161.246.38.80:8080"]];
     NSDictionary *parameters = @{@"username": self.usernameField.textField.text, @"password": self.passwordField.textField.text};
     [manager POST:@"/login" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -116,13 +118,28 @@
             if (bytesWritten <= 0) {
                 NSLog(@"ERROR!");
             }
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{[DejalBezelActivityView removeViewAnimated:YES];}];
         } else {
-            
+            NZAlertView *failedAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                              title:@"Login Failed"
+                                                            message:@"Username or password is not correct. Please try again."
+                                                           delegate:nil];
+            [failedAlert setStatusBarColor:[UIColor redColor]];
+            [failedAlert setTextAlignment:NSTextAlignmentCenter];
+            [failedAlert show];
+            [DejalBezelActivityView removeViewAnimated:YES];
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        NZAlertView *errorAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
+                                                                title:@"Login Error"
+                                                              message:@"There was a problem connecting to the network!"
+                                                             delegate:nil];
+        [errorAlert setStatusBarColor:[UIColor redColor]];
+        [errorAlert setTextAlignment:NSTextAlignmentCenter];
+        [errorAlert show];
+        [DejalBezelActivityView removeViewAnimated:YES];
     }];
 }
 @end

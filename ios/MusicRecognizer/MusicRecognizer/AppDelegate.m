@@ -18,27 +18,30 @@
     //tab bar init.
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
-    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
-    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
-    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    [tabBar setTintColor:[self.func colorWithHexString:@"ffffff"]];
     
-    [tabBarItem1 setTitle:@"Search"];
-    [tabBarItem1 setImage:[[UIImage imageNamed:@"search.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [tabBarItem1 setSelectedImage:[[UIImage imageNamed:@"search_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [tabBar setSelectedImageTintColor:[self.func colorWithHexString:@"74b2d7"]];
+//    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+//    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+//    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+//    
+//    [tabBarItem1 setTitle:@"Search"];
+//    [tabBarItem1 setImage:[[UIImage imageNamed:@"search.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [tabBarItem1 setSelectedImage:[[UIImage imageNamed:@"search_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    
+//    [tabBarItem2 setTitle:@"History"];
+//    [tabBarItem2 setImage:[[UIImage imageNamed:@"history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [tabBarItem2 setSelectedImage:[[UIImage imageNamed:@"history_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    
+//    [tabBarItem3 setTitle:@"Profile"];
+//    [tabBarItem3 setImage:[[UIImage imageNamed:@"profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [tabBarItem3 setSelectedImage:[[UIImage imageNamed:@"profile_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :  [self.func colorWithHexString:@"ffffff"]}
+//                                             forState:UIControlStateNormal];
+//    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [self.func colorWithHexString:@"74b2d7"]}
+//                                             forState:UIControlStateHighlighted];
     
-    [tabBarItem2 setTitle:@"History"];
-    [tabBarItem2 setImage:[[UIImage imageNamed:@"history.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [tabBarItem2 setSelectedImage:[[UIImage imageNamed:@"history_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [tabBarItem3 setTitle:@"Profile"];
-    [tabBarItem3 setImage:[[UIImage imageNamed:@"profile.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [tabBarItem3 setSelectedImage:[[UIImage imageNamed:@"profile_selected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName :  [self.func colorWithHexString:@"ffffff"]}
-                                             forState:UIControlStateNormal];
-    [[UITabBarItem appearance] setTitleTextAttributes:@{ NSForegroundColorAttributeName : [self.func colorWithHexString:@"74b2d7"]}
-                                             forState:UIControlStateHighlighted];
-       
     return YES;
 }
 							

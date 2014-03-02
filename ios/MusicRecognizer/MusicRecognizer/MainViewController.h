@@ -6,24 +6,16 @@
 //  Copyright (c) 2013 ITKMITL. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVFoundation.h>
-#import <AudioToolbox/AudioToolbox.h>
-#import "MicrophoneInput.h"
-#import "AFNetworking.h"
+#import <NZAlertView.h>
+#import "SearchResultViewController.h"
+#import "SearchViewController.h"
 
-@interface MainViewController : UIViewController <MPMediaPickerControllerDelegate>
+@interface MainViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
-@property (weak, nonatomic) IBOutlet UILabel *extendlabel;
-@property (weak, nonatomic) IBOutlet UILabel *trackLabel;
-@property (weak, nonatomic) IBOutlet UILabel *artistLabel;
-@property (strong, nonatomic) MicrophoneInput *recorder;
-@property (strong, nonatomic) NSDictionary *JSON;
-@property const char *fpCode;
-@property BOOL recording;
+@property (strong, nonatomic) NZAlertView *failedAlert;
 
-- (IBAction)recordPressed:(id)sender;
+- (void)notFound;
 
 @end

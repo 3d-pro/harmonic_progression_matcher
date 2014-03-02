@@ -41,10 +41,16 @@ install_resource()
       ;;
   esac
 }
-install_resource "HATransparentView/HATransparentView/images/btn-close-black.png"
-install_resource "HATransparentView/HATransparentView/images/btn-close-black@2x.png"
-install_resource "HATransparentView/HATransparentView/images/btn-close.png"
-install_resource "HATransparentView/HATransparentView/images/btn-close@2x.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetButton.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetButton@2x.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetButtonPressed.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetButtonPressed@2x.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetDoneButton.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetDoneButton@2x.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetDoneButtonPressed.png"
+install_resource "GKImagePicker@arkuana/GKImages/PLCameraSheetDoneButtonPressed@2x.png"
+install_resource "NZAlertView/NZAlertView/NZAlertView-Icons.bundle"
+install_resource "NZAlertView/NZAlertView/Views/NZAlertView.xib"
 install_resource "TSMessages/TSMessages/Resources/Images/NotificationBackgroundError.png"
 install_resource "TSMessages/TSMessages/Resources/Images/NotificationBackgroundError@2x.png"
 install_resource "TSMessages/TSMessages/Resources/Images/NotificationBackgroundErrorIcon.png"

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D72CD1752D024B29B82D43D9"
+               BlueprintIdentifier = "518BE38B6ABA4AB28F7BF63B"
                BuildableName = "libPods-BZGFormField.a"
                BlueprintName = "Pods-BZGFormField"
                ReferencedContainer = "container:Pods.xcodeproj">

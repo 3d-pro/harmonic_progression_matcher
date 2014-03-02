@@ -36,9 +36,9 @@ __weak RootViewController *weakSelf = self;
 
 ## Installation
 
-* Drag the `BZGFormField/BZGFormField` folder into your project.
+If you're using cocoapods, add ```pod 'BZGFormField'``` to your Podfile. Otherwise, add `BZGFormField/BZGFormField.h` and `BZGFormField/BZGFormField.m` to your project.
 
 ## Usage
 
-* See sample Xcode project in `/Example`
+Check out the sample Xcode project in `Example`
 

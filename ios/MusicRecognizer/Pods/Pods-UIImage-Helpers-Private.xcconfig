@@ -1,0 +1,5 @@
+#include "Pods-UIImage-Helpers.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/UIImage-Helpers" "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/AFNetworking" "${PODS_ROOT}/Headers/BZGFormField" "${PODS_ROOT}/Headers/Canvas" "${PODS_ROOT}/Headers/DejalActivityView" "${PODS_ROOT}/Headers/GKImagePicker@arkuana" "${PODS_ROOT}/Headers/HexColors" "${PODS_ROOT}/Headers/M13ProgressSuite" "${PODS_ROOT}/Headers/NZAlertView" "${PODS_ROOT}/Headers/NZCircularImageView" "${PODS_ROOT}/Headers/RNBlurModalView" "${PODS_ROOT}/Headers/SDWebImage" "${PODS_ROOT}/Headers/SFRoundProgressCounterView" "${PODS_ROOT}/Headers/TSMessages" "${PODS_ROOT}/Headers/TTTAttributedLabel" "${PODS_ROOT}/Headers/UIActivityIndicator-for-SDWebImage" "${PODS_ROOT}/Headers/UIImage-Helpers" "${PODS_ROOT}/Headers/VCTransitionsLibrary"
+OTHER_LDFLAGS = -ObjC ${PODS_UIIMAGE_HELPERS_OTHER_LDFLAGS}
+PODS_ROOT = ${SRCROOT}
