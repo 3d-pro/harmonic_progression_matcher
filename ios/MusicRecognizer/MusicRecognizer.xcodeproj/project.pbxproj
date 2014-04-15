@@ -38,6 +38,7 @@
 		3DAE8F5A184F404B0030EA79 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */; };
 		3DC7B7941877E4FE003C527A /* cover_art_test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DC7B7931877E4FE003C527A /* cover_art_test.jpg */; };
 		3DC7B7961877E6E9003C527A /* cover_art_test_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */; };
+		3DD1292F18D451A40017DF8A /* Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3DD1292E18D451A40017DF8A /* Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg */; };
 		3DD6927018706E4900CD1A03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DD6926918706E4900CD1A03 /* Main.storyboard */; };
 		3DD6927118706E4900CD1A03 /* MainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */; };
 		3DD6927218706E4900CD1A03 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DD6926D18706E4900CD1A03 /* LoginViewController.m */; };
@@ -111,6 +112,7 @@
 		3DAE8F59184F404B0030EA79 /* MicrophoneInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneInput.m; sourceTree = "<group>"; };
 		3DC7B7931877E4FE003C527A /* cover_art_test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_art_test.jpg; sourceTree = "<group>"; };
 		3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cover_art_test_2.jpg; sourceTree = "<group>"; };
+		3DD1292E18D451A40017DF8A /* Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg"; sourceTree = "<group>"; };
 		3DD6926918706E4900CD1A03 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		3DD6926A18706E4900CD1A03 /* MainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarViewController.h; sourceTree = "<group>"; };
 		3DD6926B18706E4900CD1A03 /* MainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarViewController.m; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		3DD6927618706E9500CD1A03 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3DD1292E18D451A40017DF8A /* Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg */,
 				3D1A5DDE18B5DF2900EE51CB /* album_placeholder.png */,
 				3DC7B7951877E6E8003C527A /* cover_art_test_2.jpg */,
 				3DC7B7931877E4FE003C527A /* cover_art_test.jpg */,
@@ -334,7 +337,7 @@
 		3D89C1771830E7A700926994 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = ITKMITL;
 				TargetAttributes = {
 					3D89C17E1830E7A800926994 = {
@@ -390,6 +393,7 @@
 				59EF5A0E18714A6C002F0388 /* whatshot.png in Resources */,
 				3DC7B7941877E4FE003C527A /* cover_art_test.jpg in Resources */,
 				59EF5A0718714A5F002F0388 /* history@2x.png in Resources */,
+				3DD1292F18D451A40017DF8A /* Tattoo Colour - ชุดที่ 8 จงเพราะ.jpg in Resources */,
 				5974454218708F8300EF99DC /* speechbubble.png in Resources */,
 				59EF59FD18714A54002F0388 /* profile_selected@2x.png in Resources */,
 				59EF59FC18714A54002F0388 /* profile_selected.png in Resources */,
@@ -472,7 +476,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;
@@ -512,7 +515,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
 				CLANG_CXX_LIBRARY = "compiler-default";
 				CLANG_ENABLE_MODULES = YES;

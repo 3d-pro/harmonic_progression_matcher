@@ -114,7 +114,7 @@
     NSDictionary *parameters = @{@"username": self.usernameField.textField.text, @"password": self.passwordField.textField.text, @"bio":self.bioTextView.text};
     NSData *imageData = UIImageJPEGRepresentation([self.profileImageView image], 0.7);
     [manager POST:@"/register" parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [formData appendPartWithFileData:imageData name:@"files" fileName:@"output.m4a" mimeType:@"image/jpeg"];
+            [formData appendPartWithFileData:imageData name:@"files" fileName:self.usernameField.textField.text mimeType:@"image/jpeg"];
         } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
         if ([[responseObject objectForKey:@"message"] isEqualToString:@"Register success."]) {
@@ -137,7 +137,8 @@
             if (bytesWritten <= 0) {
                 NSLog(@"ERROR!");
             }
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self dismissViewControllerAnimated:YES completion:^{[DejalBezelActivityView removeViewAnimated:YES];}];
+            
         } else {
             NZAlertView *failedAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError
                                                                     title:@"Register Failed"                                                                   message:@"Something not right. Please recheck all the info and try again."

@@ -93,6 +93,7 @@
 
 - (IBAction)signinPressed:(id)sender {
     [self.view endEditing:YES];
+    
     [DejalBezelActivityView activityViewForView:self.view withLabel:@"Loading.."];
     AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://161.246.38.80:8080"]];
     NSDictionary *parameters = @{@"username": self.usernameField.textField.text, @"password": self.passwordField.textField.text};
@@ -118,6 +119,7 @@
             if (bytesWritten <= 0) {
                 NSLog(@"ERROR!");
             }
+            NSLog(@"%hhd", [[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]);
             [self dismissViewControllerAnimated:YES completion:^{[DejalBezelActivityView removeViewAnimated:YES];}];
         } else {
             NZAlertView *failedAlert = [[NZAlertView alloc] initWithStyle:NZAlertStyleError

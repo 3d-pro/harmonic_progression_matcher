@@ -38,34 +38,43 @@
         self.tokenDict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:self.tokenPath] options:NSJSONReadingMutableContainers error:nil];
         self.profileView.hidden = NO;
         self.loginView.hidden = YES;
-        self.logoutBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutPressed)];
-        self.navigationItem.rightBarButtonItem = self.logoutBarButton;
-        self.navigationItem.title = [self.tokenDict objectForKey:@"username"];
-        [self loadHistory];
+        if (self.profileView.hidden == NO) {
+            self.logoutBarButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutPressed)];
+            self.logoutBarButton.tintColor = [UIColor whiteColor];
+            self.navigationItem.rightBarButtonItem = self.logoutBarButton;
+            self.navigationItem.title = [self.tokenDict objectForKey:@"username"];
+            NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_profile/%@.jpg",[self.tokenDict objectForKey:@"username"]];
+            NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            UIImage *placeholderImage = [UIImage imageNamed:@"album_placeholder.png"];
+            [self.profileImageView setImageWithURL:[NSURL URLWithString:encodedImage] placeholderImage:placeholderImage usingActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+            [self loadHistory];
+        }
     } else {
         self.profileView.hidden = YES;
         self.loginView.hidden = NO;
-        self.navigationItem.title = @"Profile";
-        self.navigationItem.rightBarButtonItem = nil;
-        
-        [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox.png"] forState:UIControlStateNormal];
-        [self.signinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"]  forState:UIControlStateHighlighted];
-        [self.signinButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateHighlighted];
-        
-        
-        [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"] forState:UIControlStateSelected];
-        [self.signinButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateSelected];
-        
-        [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox.png"] forState:UIControlStateNormal];
-        [self.signinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        
-        [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"]  forState:UIControlStateHighlighted];
-        [self.registerButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateHighlighted];
-        
-        [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"] forState:UIControlStateSelected];
-        [self.registerButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateSelected];
+        if (self.loginView.hidden == NO) {
+            self.navigationItem.title = @"Profile";
+            self.navigationItem.rightBarButtonItem = nil;
+            
+            [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox.png"] forState:UIControlStateNormal];
+            [self.signinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"]  forState:UIControlStateHighlighted];
+            [self.signinButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateHighlighted];
+            
+            
+            [self.signinButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"] forState:UIControlStateSelected];
+            [self.signinButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateSelected];
+            
+            [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox.png"] forState:UIControlStateNormal];
+            [self.signinButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            
+            [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"]  forState:UIControlStateHighlighted];
+            [self.registerButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateHighlighted];
+            
+            [self.registerButton setBackgroundImage:[UIImage imageNamed:@"buttonbox_selected.png"] forState:UIControlStateSelected];
+            [self.registerButton setTitleColor:[self.func colorWithHexString:@"0093d8"] forState:UIControlStateSelected];
+        }
     }
 }
 
@@ -89,6 +98,7 @@
         [manager GET:@"/history" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if ([[responseObject objectForKey:@"message"] isEqualToString:@"Query success."]) {
                 self.historyArray = [responseObject objectForKey:@"history"];
+                self.bioTextView.text = [responseObject objectForKey:@"bio"];
                 [self.tableView reloadData];
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -106,12 +116,16 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Today";
+    return @"History";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
-        return [self.historyArray count];
+        if ([self.historyArray count] != 0) {
+            return [self.historyArray count];
+        } else {
+            return 1;
+        }
     } else {
         return 1;
     }
@@ -119,25 +133,32 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
-    if ([[self historyArray] count] == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
-        UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
-        UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
-        UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
-        
-        NSDictionary *songDict = [self.historyArray objectAtIndex:[indexPath row]];
-        titleLabel.text = [songDict objectForKey:@"title"];
-        artistLabel.text = [songDict objectForKey:@"artist"];
-        [DejalKeyboardActivityView activityViewForView:coverImageView];
-        __weak UIImageView *weakCoverImageView = coverImageView;
-        NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[songDict objectForKey:@"artist"],[songDict objectForKey:@"album"]];
-        NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
-            weakCoverImageView.image = image;
-            [DejalKeyboardActivityView removeViewAnimated:YES];
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-            NSLog(@"%@",error);
-        }];
+    if (self.profileView.hidden == NO) {
+        if ([[self historyArray] count] != 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
+            UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
+            UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
+            UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
+            
+            NSDictionary *songDict = [self.historyArray objectAtIndex:[indexPath row]];
+            titleLabel.text = [songDict objectForKey:@"title"];
+            artistLabel.text = [songDict objectForKey:@"artist"];
+            if (![[songDict objectForKey:@"album"] isEqualToString:@"-"]) {
+                [DejalKeyboardActivityView activityViewForView:coverImageView];
+                __weak UIImageView *weakCoverImageView = coverImageView;
+                NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[songDict objectForKey:@"artist"],[songDict objectForKey:@"album"]];
+                NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                [coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                    weakCoverImageView.image = image;
+                    [DejalKeyboardActivityView removeViewAnimated:YES];
+                } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+                    NSLog(@"%@",error);
+                    weakCoverImageView.image = [UIImage imageNamed:@"album_placeholder.png"];
+                }];
+            }
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"Unused"];
+        }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Unused"];
     }

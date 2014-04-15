@@ -31,7 +31,7 @@
     self.timeCounter.delegate = self;
     NSNumber* interval = [NSNumber numberWithLong:20000.0];
     self.timeCounter.intervals = @[interval];
-    self.timeCounter.backgroundColor = [self.func colorWithHexString:@"55a4cc"];
+    self.timeCounter.backgroundColor = [UIColor blackColor];
     self.timeCounter.outerProgressColor = [UIColor whiteColor];
     self.timeCounter.labelColor = [UIColor whiteColor];
     // Do any additional setup after loading the view.
@@ -39,11 +39,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.searchResultDict = [[NSMutableDictionary alloc] init];
+    self.tokenPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"token.json"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    [self.timeCounter start];
     [self.recorder startRecording];
+    [self.timeCounter start];
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +55,7 @@
 
 - (void)countdownDidEnd:(SFRoundProgressCounterView *)progressCounterView {
     [self.recorder stopRecording];
-    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Finding..."];
+    [DejalKeyboardActivityView activityViewForView:self.view withLabel:@"Finding..."];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"output.m4a"];
@@ -74,7 +75,6 @@
                                                     options: NSJSONReadingMutableContainers
                                                       error: nil];
         self.metadata = [self.JSON objectForKey:@"metadata"];
-        //        NSLog(@"%@",[self.metadata objectForKey:@"track"]);
         if (![self.metadata objectForKey:@"track"] || ![self.metadata objectForKey:@"artist"]) {
             UIAlertView *notFoundAlert = [[UIAlertView alloc] initWithTitle:@"Song not found!"
                                                                     message:@"Please try again!"
@@ -83,11 +83,16 @@
                                                           otherButtonTitles:nil, nil];
             [notFoundAlert show];
         } else {
-            self.tokenPath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"token.json"];
             //check for token path. if exists, send to /history
             if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
                 self.tokenDict = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:self.tokenPath] options:NSJSONReadingMutableContainers error:nil];
-                NSDictionary *parameters = @{@"username": [self.tokenDict objectForKey:@"username"], @"artist": [self.metadata objectForKey:@"artist"], @"album": [self.metadata objectForKey:@"release"], @"title": [self.metadata objectForKey:@"track"]};
+                NSString *album;
+                if ([self.metadata objectForKey:@"release"] == nil) {
+                    album = @"-";
+                } else {
+                    album = [self.metadata objectForKey:@"release"];
+                }
+                NSDictionary *parameters = @{@"username": [self.tokenDict objectForKey:@"username"], @"artist": [self.metadata objectForKey:@"artist"], @"album": album, @"title": [self.metadata objectForKey:@"track"]};
                 [manager POST:@"/history" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     if ([[responseObject objectForKey:@"message"] isEqualToString:@"Update success."]) {
                         NSLog(@"Update Success.");

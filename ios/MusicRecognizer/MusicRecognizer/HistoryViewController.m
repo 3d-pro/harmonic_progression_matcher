@@ -67,12 +67,16 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"Today";
+    return @"All";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
-        return [self.historyArray count];
+        if ([self.historyArray count] != 0) {
+            return [self.historyArray count];
+        } else {
+            return 1;
+        }
     } else {
         return 1;
     }
@@ -81,24 +85,31 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell;
     if ([[NSFileManager defaultManager] fileExistsAtPath:self.tokenPath]) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
-        UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
-        UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
-        UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
-        
-        NSDictionary *songDict = [self.historyArray objectAtIndex:[indexPath row]];
-        titleLabel.text = [songDict objectForKey:@"title"];
-        artistLabel.text = [songDict objectForKey:@"artist"];
-        [DejalKeyboardActivityView activityViewForView:coverImageView];
-        __weak UIImageView *weakCoverImageView = coverImageView;
-        NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[songDict objectForKey:@"artist"],[songDict objectForKey:@"album"]];
-        NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        [coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
-            weakCoverImageView.image = image;
-            [DejalKeyboardActivityView removeViewAnimated:YES];
-        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-            NSLog(@"%@",error);
-        }];
+        if ([self.historyArray count] != 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"History"];
+            UIImageView *coverImageView = (UIImageView *) [cell viewWithTag:1];
+            UILabel *titleLabel = (UILabel *) [cell viewWithTag:2];
+            UILabel *artistLabel = (UILabel *) [cell viewWithTag:3];
+            
+            NSDictionary *songDict = [self.historyArray objectAtIndex:[indexPath row]];
+            titleLabel.text = [songDict objectForKey:@"title"];
+            artistLabel.text = [songDict objectForKey:@"artist"];
+            if (![[songDict objectForKey:@"album"] isEqualToString:@"-"]) {
+                [DejalKeyboardActivityView activityViewForView:coverImageView];
+                __weak UIImageView *weakCoverImageView = coverImageView;
+                NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[songDict objectForKey:@"artist"],[songDict objectForKey:@"album"]];
+                NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+                [coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+                    weakCoverImageView.image = image;
+                    [DejalKeyboardActivityView removeViewAnimated:YES];
+                } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+                    weakCoverImageView.image = [UIImage imageNamed:@"album_placeholder.png"];
+                    NSLog(@"%@",error);
+                }];
+            }
+        } else {
+            cell = [tableView dequeueReusableCellWithIdentifier:@"No History"];
+        }
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:@"Not Login"];
     }

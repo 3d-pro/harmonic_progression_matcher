@@ -25,6 +25,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <AFNetworking/UIImageView+AFNetworking.h>
 #import "UIImageView+UIActivityIndicatorForSDWebImage.h"
 
 @interface NZCircularImageView : UIImageView

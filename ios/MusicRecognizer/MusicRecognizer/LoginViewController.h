@@ -10,6 +10,7 @@
 #import <DejalActivityView.h>
 #import <AFNetworking.h>
 #import <AFNetworking/UIImageView+AFNetworking.h>
+#import <NZCircularImageView.h>
 #import "TypicalFunctions.h"
 
 @interface LoginViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -19,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet UIView *profileView;
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet NZCircularImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UITextView *bioTextView;
 @property (strong, nonatomic) UIBarButtonItem *logoutBarButton;
 @property (strong, nonatomic) NSString *tokenPath;
 @property (strong, nonatomic) NSMutableArray *historyArray;

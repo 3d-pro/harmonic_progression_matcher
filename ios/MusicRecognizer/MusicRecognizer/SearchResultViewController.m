@@ -34,15 +34,19 @@
     self.titleLabel.text = [self.parameters objectForKey:@"title"];
     self.artistLabel.text = [self.parameters objectForKey:@"artist"];
     self.albumLabel.text = [self.parameters objectForKey:@"album"];
-    __weak UIImageView *weakCoverImageView = self.coverImageView;
-    NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[self.parameters objectForKey:@"artist"],[self.parameters objectForKey:@"album"]];
-    NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    [self.coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
-        weakCoverImageView.image = image;
+    if (![[self.parameters objectForKey:@"album"] isEqualToString:@"-"]) {
+        __weak UIImageView *weakCoverImageView = self.coverImageView;
+        NSString *image = [NSString stringWithFormat:@"http://161.246.38.80:8080/static/chordle_cover/%@ - %@.jpg",[self.parameters objectForKey:@"artist"],[self.parameters objectForKey:@"album"]];
+        NSString *encodedImage = [image stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [self.coverImageView setImageWithURLRequest:[[NSURLRequest alloc] initWithURL:[NSURL URLWithString:encodedImage]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image){
+            weakCoverImageView.image = image;
+            [DejalKeyboardActivityView removeViewAnimated:YES];
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
+            NSLog(@"%@",error);
+        }];
+    } else {
         [DejalKeyboardActivityView removeViewAnimated:YES];
-    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error){
-        NSLog(@"%@",error);
-    }];
+    }
 }
 
 - (void)didReceiveMemoryWarning
